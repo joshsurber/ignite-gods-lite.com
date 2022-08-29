@@ -1,0 +1,24 @@
+{
+  "name": "ignite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "eleventy --serve",
+    "build":"eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshsurber/ignite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshsurber/ignite/issues"
+  },
+  "homepage": "https://github.com/joshsurber/ignite#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2"
+  }
+}
