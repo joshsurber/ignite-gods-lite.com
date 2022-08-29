@@ -1,0 +1,254 @@
+/* RESET {*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font: inherit;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+picture,
+img {
+  max-width: 100%;
+  display: block;
+}
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*}*/
+/* BASE STYLES {*/
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+
+:root {
+  --hsl-hs: 218 60%;
+  --hsl-l: 18%;
+  --hsl-hs-a: 47 69%;
+  --hsl-l-a: 41%;
+
+  /* HSL here so I can combine with opacity */
+  --hsl-brand: var(--hsl-hs) var(--hsl-l);
+  --hsl-accent: var(--hsl-hs-a) var(--hsl-l-a);
+  --hsl-white: var(--hsl-hs-a) 95%;
+  --hsl-black: var(--hsl-hs) 5%;
+  /* These are more convienance */
+  --color-brand: hsl(var(--hsl-brand));
+  --color-accent: hsl(var(--hsl-accent));
+  --color-white: hsl(var(--hsl-white));
+  --color-black: hsl(var(--hsl-black));
+
+  --size-head: var(--step-5);
+  --size-hero: var(--step-4);
+  --size-subhead: var(--step-3);
+  --size-text: var(--step--1);
+
+  --font-heading: "Playfair Display", serif;
+
+  --fw-heading: 700;
+  --fw-bold: 700;
+
+  /* UTOPIA {*/
+  --step--2: clamp(0.91rem, calc(0.89rem + 0.1vw), 0.96rem);
+  --step--1: clamp(1.09rem, calc(1.05rem + 0.21vw), 1.2rem);
+  --step-0: clamp(1.31rem, calc(1.24rem + 0.37vw), 1.5rem);
+  --step-1: clamp(1.58rem, calc(1.46rem + 0.59vw), 1.88rem);
+  --step-2: clamp(1.89rem, calc(1.71rem + 0.89vw), 2.34rem);
+  --step-3: clamp(2.27rem, calc(2.01rem + 1.29vw), 2.93rem);
+  --step-4: clamp(2.72rem, calc(2.36rem + 1.83vw), 3.66rem);
+  --step-5: clamp(3.27rem, calc(2.75rem + 2.56vw), 4.58rem);
+  --space-3xs: clamp(0.31rem, calc(0.29rem + 0.12vw), 0.38rem);
+  --space-2xs: clamp(0.69rem, calc(0.66rem + 0.12vw), 0.75rem);
+  --space-xs: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
+  --space-s: clamp(1.31rem, calc(1.24rem + 0.37vw), 1.5rem);
+  --space-m: clamp(2rem, calc(1.9rem + 0.49vw), 2.25rem);
+  --space-l: clamp(2.63rem, calc(2.48rem + 0.73vw), 3rem);
+  --space-xl: clamp(3.94rem, calc(3.72rem + 1.1vw), 4.5rem);
+  --space-2xl: clamp(5.25rem, calc(4.96rem + 1.46vw), 6rem);
+  --space-3xl: clamp(7.88rem, calc(7.44rem + 2.2vw), 9rem);
+  --space-3xs-2xs: clamp(0.31rem, calc(0.14rem + 0.85vw), 0.75rem);
+  --space-2xs-xs: clamp(0.69rem, calc(0.52rem + 0.85vw), 1.13rem);
+  --space-xs-s: clamp(1rem, calc(0.8rem + 0.98vw), 1.5rem);
+  --space-s-m: clamp(1.31rem, calc(0.95rem + 1.83vw), 2.25rem);
+  --space-m-l: clamp(2rem, calc(1.61rem + 1.95vw), 3rem);
+  --space-l-xl: clamp(2.63rem, calc(1.89rem + 3.66vw), 4.5rem);
+  --space-xl-2xl: clamp(3.94rem, calc(3.13rem + 4.02vw), 6rem);
+  --space-2xl-3xl: clamp(5.25rem, calc(3.79rem + 7.32vw), 9rem);
+  /*}*/
+}
+body {
+  background: var(--color-white);
+  color: var(--color-black);
+  font-size: var(--size-text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+a {
+  color: var(--color-brand);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  position: relative;
+}
+a::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  border-bottom: 1px solid currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 350ms ease-in-out;
+}
+a:is(:hover, :focus-visible)::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+header {
+  background: var(--color-brand);
+  color: var(--color-white);
+}
+h1 {
+  font-size: var(--size-h1);
+  font-family: var(--font-heading);
+  font-weight: var(--fw-heading);
+  line-height: 1;
+}
+h2 {
+  margin-block-start: 1em;
+  font-size: var(--size-subhead);
+  color: var(--color-brand);
+  /* font-family: var(--font-heading); */
+  line-height: 1;
+}
+em {
+  font-style: italic;
+}
+strong {
+  font-weight: var(--fw-bold);
+}
+footer {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/*}*/
+/* LAYOUT {*/
+
+.flow * + * {
+  margin-top: 1em;
+}
+.even-columns {
+  --columns: 2;
+  --gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--gap, 1em);
+}
+.container {
+  --padding: 1em;
+  --width: 40em;
+  width: min(100% - var(--padding) * 2, var(--width));
+  margin-inline: auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  gap: 1rem;
+}
+header blockquote cite {
+  display: block;
+  text-align: end;
+}
+@media (max-width: 40em) {
+  header {
+    flex-direction: column;
+  }
+}
+
+/*}*/
+/* COMPONENTS {*/
+
+.hero {
+}
+.hero .major {
+  background-image: url(Flag-Banner.jpg);
+  background-size: cover;
+  background-position: center;
+  font-size: var(--size-hero);
+  text-shadow: 0 0 2px var(--color-white);
+  min-height: 50vh;
+}
+.hero .minor {
+  padding: var(--space-3xs) var(--space-m);
+  text-align: center;
+}
+blockquote.bible {
+  font-weight: bold;
+}
+blockquote.bible cite {
+  font-weight: normal;
+  color: var(--color-accent);
+}
+
+.testimonials cite {
+  display: block;
+  text-align: right;
+}
+.testimonials cite::before {
+  content: "— ";
+}
+
+/*}*/
+/* UTILITY {*/
+
+.center {
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+.black {
+  color: var(--color-black);
+}
+.white {
+  color: var(--color-white);
+}
+.brand {
+  color: var(--color-brand);
+}
+.accent {
+  color: var(--color-accent);
+}
+.blackbg {
+  background-color: var(--color-black);
+}
+.whitebg {
+  background-color: var(--color-white);
+}
+.brandbg {
+  background-color: var(--color-brand);
+}
+.accentbg {
+  background-color: var(--color-accent);
+}
+
+/*}*/
+/* EXCEPTIONS {*/
+/*}*/
