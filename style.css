@@ -35,7 +35,7 @@ img {
 
 /*}*/
 /* BASE STYLES {*/
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@698&display=swap");
 
 :root {
   --hsl-hs: 218 60%;
@@ -43,28 +43,28 @@ img {
   --hsl-hs-a: 47 69%;
   --hsl-l-a: 41%;
 
-  /* HSL here so I can combine with opacity */
-  --hsl-brand: var(--hsl-hs) var(--hsl-l);
-  --hsl-accent: var(--hsl-hs-a) var(--hsl-l-a);
-  --hsl-white: var(--hsl-hs-a) 95%;
-  --hsl-black: var(--hsl-hs) 5%;
-  /* These are more convienance */
   --color-brand: hsl(var(--hsl-brand));
   --color-accent: hsl(var(--hsl-accent));
   --color-white: hsl(var(--hsl-white));
   --color-black: hsl(var(--hsl-black));
 
+  --hsl-brand: var(--hsl-hs) var(--hsl-l);
+  --hsl-accent: var(--hsl-hs-a) var(--hsl-l-a);
+  --hsl-white: var(--hsl-hs-a) 95%;
+  --hsl-black: var(--hsl-hs) 5%;
+
   --size-head: var(--step-5);
   --size-hero: var(--step-4);
   --size-subhead: var(--step-3);
   --size-text: var(--step--1);
+  --size-small: var(--step--2);
 
   --font-heading: "Playfair Display", serif;
 
   --fw-heading: 700;
   --fw-bold: 700;
 
-  /* UTOPIA {*/
+  /* UTOPIA.FYI, a great tool for responsive sizings {*/
   --step--2: clamp(0.91rem, calc(0.89rem + 0.1vw), 0.96rem);
   --step--1: clamp(1.09rem, calc(1.05rem + 0.21vw), 1.2rem);
   --step-0: clamp(1.31rem, calc(1.24rem + 0.37vw), 1.5rem);
@@ -99,13 +99,16 @@ body {
   font-family: system-ui, sans-serif;
   line-height: 1.5;
 }
-a {
+a,
+.link {
+  cursor: pointer;
   color: var(--color-brand);
   font-weight: var(--fw-bold);
   text-decoration: none;
   position: relative;
 }
-a::before {
+a::before,
+.link::before {
   position: absolute;
   content: "";
   inset: 0;
@@ -142,25 +145,42 @@ strong {
   font-weight: var(--fw-bold);
 }
 footer {
-  background-color: var(--color-accent);
-  color: var(--color-white);
+  padding-inline: var(--size-small, 1rem);
+}
+footer > :first-child {
+  grid-column: 1/-1;
+  text-align: center;
+}
+footer > :last-child {
+  grid-column: 1/-1;
+  text-align: center;
+}
+footer .serviceareas ul {
+  list-style-type: none;
+}
+footer .serviceareas li {
+  display: inline;
+}
+footer .serviceareas li + li::before {
+  content: ", ";
 }
 
 /*}*/
 /* LAYOUT {*/
 
 .flow * + * {
-  margin-top: 1em;
+  --gap: var(--space-s, 1rem);
+  margin-top: var(--gap);
 }
 .even-columns {
   --columns: 2;
-  --gap: 1rem;
+  --gap: var(--space-s, 1rem);
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
-  gap: var(--gap, 1em);
+  gap: var(--gap);
 }
 .container {
-  --padding: 1em;
+  --padding: var(--space-s, 1rem);
   --width: 40em;
   width: min(100% - var(--padding) * 2, var(--width));
   margin-inline: auto;
@@ -198,14 +218,17 @@ header blockquote cite {
 }
 .hero .minor {
   padding: var(--space-3xs) var(--space-m);
+  font-size: var(--size-small);
   text-align: center;
 }
-blockquote.bible {
+
+.bible {
   font-weight: bold;
 }
-blockquote.bible cite {
+.bible cite {
   font-weight: normal;
   color: var(--color-accent);
+  font-style: italic;
 }
 
 .testimonials cite {
@@ -224,6 +247,8 @@ blockquote.bible cite {
   place-content: center;
   text-align: center;
 }
+
+/* Simple color switch utility classes. Correct zero-contrast colors */
 .black {
   color: var(--color-black);
 }
@@ -239,14 +264,26 @@ blockquote.bible cite {
 .blackbg {
   background-color: var(--color-black);
 }
+.blackbg * {
+  --color-black: var(--color-white);
+}
 .whitebg {
   background-color: var(--color-white);
+}
+.whitebg * {
+  --color-white: var(--color-black);
 }
 .brandbg {
   background-color: var(--color-brand);
 }
+.brandbg * {
+  --color-brand: var(--color-accent);
+}
 .accentbg {
   background-color: var(--color-accent);
+}
+.accentbg * {
+  --color-accent: var(--color-brand);
 }
 
 /*}*/
