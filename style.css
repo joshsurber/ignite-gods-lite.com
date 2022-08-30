@@ -35,8 +35,6 @@ img {
 
 /*}*/
 /* BASE STYLES {*/
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@698&display=swap");
-
 :root {
   --hsl-hs: 218 60%;
   --hsl-l: 18%;
@@ -132,11 +130,13 @@ h1 {
   line-height: 1;
 }
 h2 {
-  margin-block-start: 1em;
+  margin-block: 1em;
   font-size: var(--size-subhead);
   color: var(--color-brand);
-  /* font-family: var(--font-heading); */
   line-height: 1;
+}
+p {
+  text-align: right;
 }
 em {
   font-style: italic;
@@ -144,27 +144,33 @@ em {
 strong {
   font-weight: var(--fw-bold);
 }
+blockquote cite::before {
+  content: "— ";
+}
 footer {
   margin-block-start: var(--space-m, 1.5rem);
   padding: var(--space-xs, 1rem);
-  align-items: center;
+  /* align-items: center; */
 }
-footer .serviceareas ul {
-  list-style-type: none;
-}
-footer .serviceareas li {
-  display: inline;
-}
-footer .serviceareas li:not(:last-child):after {
-  content: ", ";
-}
+
+/* footer .serviceareas ul { */
+/*   list-style-type: none; */
+/* } */
+/* footer .serviceareas li { */
+/*   display: inline; */
+/* } */
+/* footer .serviceareas li:not(:last-child):after { */
+/*   content: ", "; */
+/* } */
 
 /*}*/
 /* LAYOUT {*/
 
-.flow * + * {
-  --gap: var(--space-s, 1rem);
-  margin-top: var(--gap);
+.flow * + *:not(li) {
+  margin-top: var(--flow-gap, var(--space-s, 1em));
+}
+.flow blockquote + blockquote {
+  margin-top: var(--space-2xl, 3rem);
 }
 .even-columns {
   --columns: 2;
@@ -191,9 +197,9 @@ header {
   padding-inline: 1rem;
   gap: 1rem;
 }
-header blockquote cite {
+header cite {
   display: block;
-  text-align: end;
+  text-align: right;
 }
 @media (max-width: 40em) {
   header {
@@ -207,7 +213,7 @@ header blockquote cite {
 .hero {
 }
 .hero .major {
-  background-image: url(Flag-Banner.jpg);
+  background-image: url(/img/Flag-Banner.jpg);
   background-size: cover;
   background-position: center;
   font-size: var(--size-hero);
@@ -229,12 +235,25 @@ header blockquote cite {
   font-style: italic;
 }
 
-.testimonials cite {
-  display: block;
-  text-align: right;
+main blockquote {
+  border-inline-start: 0.5em solid var(--color-accent);
+  padding: 0.5em 1em;
+  position: relative;
 }
-.testimonials cite::before {
-  content: "— ";
+main blockquote::before {
+  content: open-quote;
+  position: absolute;
+  font-size: var(--step-5);
+  color: var(--color-accent);
+  left: -1em;
+}
+main blockquote::after {
+  content: close-quote;
+  position: absolute;
+  font-size: var(--step-5);
+  color: var(--color-accent);
+  bottom: 0;
+  right: -1em;
 }
 
 /*}*/
@@ -246,7 +265,6 @@ header blockquote cite {
   text-align: center;
 }
 
-/* Simple color switch utility classes. Correct zero-contrast colors */
 .black {
   color: var(--color-black);
 }
