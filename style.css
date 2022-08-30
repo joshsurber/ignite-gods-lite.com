@@ -1,4 +1,5 @@
 /* RESET {*/
+
 *,
 *::before,
 *::after {
@@ -35,6 +36,7 @@ img {
 
 /*}*/
 /* BASE STYLES {*/
+
 :root {
   --hsl-hs: 218 60%;
   --hsl-l: 18%;

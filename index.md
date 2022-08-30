@@ -1,6 +1,6 @@
 ---
 title: Disability claims assistance via IGNITE GOD'S LITE
-layout: base
+layout: home
 ---
 
 ## What we do
@@ -25,21 +25,21 @@ We can assist you in filing your disability claim by:
 For email inquiries, just fill out the form below and we will contact you.
 
 <div class="even-columns">
-<form>
-<fieldset>
-<legend>Military</legend>
-<input type="email" name="email" />
-<input type="hidden" name="type" value="military" />
-<button type="submit">Submit</button>
-</fieldset>
-</form>
+  <form>
+    <fieldset>
+      <legend>Military</legend>
+      <input type="email" name="email" />
+      <input type="hidden" name="type" value="military" />
+      <button type="submit">Submit</button>
+    </fieldset>
+  </form>
 
-<form>
-<fieldset>
-<legend>Civilian</legend>
-<input type="email" name="email" />
-<input type="hidden" name="type" value="civilian" />
-<button type="submit">Submit</button>
-</fieldset>
-</form>
+  <form>
+    <fieldset>
+      <legend>Civilian</legend>
+      <input type="email" name="email" />
+      <input type="hidden" name="type" value="civilian" />
+      <button type="submit">Submit</button>
+    </fieldset>
+  </form>
 </div>
