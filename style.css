@@ -1,3 +1,4 @@
+/* vim set fdm=marker fmr={,} */
 /* RESET {*/
 
 *,
@@ -265,7 +266,7 @@ main blockquote::before,
 main blockquote::after {
   position: absolute;
   font-size: var(--step-5);
-  color: var(--color-black);
+  color: var(--color-accent);
 }
 main blockquote::before {
   content: open-quote;
@@ -275,6 +276,10 @@ main blockquote::after {
   content: close-quote;
   bottom: 0;
   right: -1em;
+}
+
+form img {
+  filter: grayscale(70%);
 }
 
 /*}*/
@@ -288,7 +293,6 @@ main blockquote::after {
 .mx-auto {
   margin-inline: auto;
 }
-
 .black {
   color: var(--color-black);
 }
