@@ -3,6 +3,7 @@ title: Our story
 layout: page
 ---
 
+<img src="/img/Barbi-Ignite-Gods-Lite.jpg" alt="Image of Barbi J Law" class="center float-left">
 In 2015, I struggled with an illness that severely interfered with my
 ability to work competitively. This illness ultimately leads to the need
 for my resignation in August 2015. After months of recuperation I was
@@ -30,6 +31,7 @@ sacrifice on the Cross of Calvary over 2000 years ago.
 
 ## Barbi J. Law, B.A.
 
+<img src="/img/Barbi-with-client.jpg" alt="Image of Barbi working with a client" class="center float-right">
 President and CEO of IGNiTE GOD'S LITE, LLC (est. August 2018)
 
 - DEGREE

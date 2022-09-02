@@ -20,24 +20,26 @@ We can assist you in filing your disability claim by:
 - Provide assistance with Veteran Affairs claims
 - Provide assistance with SSDI Hearings or Appeals Council reviews, (second level of appeal and above).
 
-## Application process for SSDI
+## Application process for <abbr title="Social Security Disability Insurance">SSDI</abbr>
 
 For email inquiries, just fill out the form below and we will contact you.
 
 <div class="even-columns">
-  <form>
+  <form class="center flow">
     <fieldset>
       <legend>Military</legend>
-      <input type="email" name="email" />
+      <img src="img/military.png" alt="Person in military attire" class="mx-auto">
+      <input type="email" name="email" placeholder="Your email address"/>
       <input type="hidden" name="type" value="military" />
       <button type="submit">Submit</button>
     </fieldset>
   </form>
 
-  <form>
+  <form class="center flow">
     <fieldset>
       <legend>Civilian</legend>
-      <input type="email" name="email" />
+      <img src="img/civilian.png" alt="Person in civilian attire" class="mx-auto">
+      <input type="email" name="email" placeholder="Your email address"/>
       <input type="hidden" name="type" value="civilian" />
       <button type="submit">Submit</button>
     </fieldset>

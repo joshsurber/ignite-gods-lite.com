@@ -137,14 +137,18 @@ h2 {
   color: var(--color-brand);
   line-height: 1;
 }
-p {
-  text-align: right;
-}
 em {
   font-style: italic;
 }
 strong {
   font-weight: var(--fw-bold);
+}
+ul ::marker {
+  font-size: 1.25em;
+  content: "✝";
+}
+ul ul ::marker {
+  content: "✞";
 }
 blockquote cite::before {
   content: "— ";
@@ -175,11 +179,13 @@ footer {
   margin-top: var(--space-2xl, 3rem);
 }
 .even-columns {
-  --columns: 2;
-  --gap: var(--space-s, 1rem);
   display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
-  gap: var(--gap);
+  gap: var(--gap, var(--space-s, 1rem));
+}
+@media (min-width: 50em) {
+  .even-columns {
+    grid-template-columns: repeat(var(--columns, 2), 1fr);
+  }
 }
 .container {
   --padding: var(--space-s, 1rem);
@@ -203,9 +209,21 @@ header cite {
   display: block;
   text-align: right;
 }
-@media (max-width: 40em) {
+@media (max-width: 50em) {
   header {
     flex-direction: column;
+  }
+}
+
+main img {
+  border: 1px solid var(--color-black);
+  margin: var(--space-xs) auto;
+}
+@media (min-width: 50em) {
+  main img {
+    margin: var(--space-3xs);
+  }
+  main img.right {
   }
 }
 
@@ -238,22 +256,23 @@ header cite {
 }
 
 main blockquote {
-  border-inline-start: 0.5em solid var(--color-accent);
+  border-inline: 0.5em solid var(--color-accent);
+  border-radius: 1em;
   padding: 0.5em 1em;
   position: relative;
 }
-main blockquote::before {
-  content: open-quote;
+main blockquote::before,
+main blockquote::after {
   position: absolute;
   font-size: var(--step-5);
-  color: var(--color-accent);
+  color: var(--color-black);
+}
+main blockquote::before {
+  content: open-quote;
   left: -1em;
 }
 main blockquote::after {
   content: close-quote;
-  position: absolute;
-  font-size: var(--step-5);
-  color: var(--color-accent);
   bottom: 0;
   right: -1em;
 }
@@ -265,6 +284,9 @@ main blockquote::after {
   display: grid;
   place-content: center;
   text-align: center;
+}
+.mx-auto {
+  margin-inline: auto;
 }
 
 .black {
@@ -302,6 +324,12 @@ main blockquote::after {
 }
 .accentbg * {
   --color-accent: var(--color-brand);
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
 }
 
 /*}*/
