@@ -3,7 +3,7 @@ title: Our story
 layout: page
 ---
 
-<img src="/img/Barbi-Ignite-Gods-Lite.jpg" alt="Image of Barbi J Law" class="center float-left">
+<img src="/img/barbi-office.jpg" alt="Image of Barbi J Law" class="about center float-left">
 In 2015, I struggled with an illness that severely interfered with my
 ability to work competitively. This illness ultimately leads to the need
 for my resignation in August 2015. After months of recuperation I was
@@ -31,7 +31,7 @@ sacrifice on the Cross of Calvary over 2000 years ago.
 
 ## Barbi J. Law, B.A.
 
-<img src="/img/Barbi-with-client.jpg" alt="Image of Barbi working with a client" class="center float-right">
+<img src="/img/plane.jpg" alt="Image of Barbi working with a client" class="about center float-right">
 President and CEO of IGNiTE GOD'S LITE, LLC (est. August 2018)
 
 - DEGREE
@@ -47,9 +47,12 @@ President and CEO of IGNiTE GOD'S LITE, LLC (est. August 2018)
     Children's and Women's Health Medicaid Insurance, Food Stamps,
     Medicare Savings Plans, and Medicare D Prescription Assistance.
 - AWARDS
+
   - Multiple recipient of quarterly recognition awards, from January
     2013 – July 2015 for "Outstanding Customer Service".
   - Team Lead providing monthly supervision, mentorship and routine
     upgrade training for six team members from September 2014 – July 2015.
   - 2016 award recipient for the Air Force Personnel Center Wounded
     Warrior Program "Care**Beyond**Duty".
+
+    <img class="center mx-auto" src="/img/statue.jpg" alt="Barbi in front of some statue of planes because MURICA!">
