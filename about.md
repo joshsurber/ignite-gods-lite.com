@@ -4,7 +4,7 @@ layout: page
 bodyClass: about
 ---
 
-<img src="/img/barbi-office.jpg" alt="Image of Barbi J Law" class="about center float-left">
+<img src="/img/barbi-office.jpg" alt="Image of Barbi J Law" class="photo">
 In 2015, I struggled with an illness that severely interfered with my
 ability to work competitively. This illness ultimately leads to the need
 for my resignation in August 2015. After months of recuperation I was
@@ -32,7 +32,7 @@ sacrifice on the Cross of Calvary over 2000 years ago.
 
 ## Barbi J. Law, B.A.
 
-<img src="/img/plane.jpg" alt="Image of Barbi working with a client" class="about center float-right">
+<img src="/img/plane.jpg" alt="Image of Barbi standing in front of a plane" class="photo">
 President and CEO of IGNiTE GOD'S LITE, LLC (est. August 2018)
 
 - DEGREE
@@ -56,4 +56,4 @@ President and CEO of IGNiTE GOD'S LITE, LLC (est. August 2018)
   - 2016 award recipient for the Air Force Personnel Center Wounded
     Warrior Program "Care**Beyond**Duty".
 
-    <img class="center mx-auto" src="/img/statue.jpg" alt="Barbi in front of some statue of planes because MURICA!">
+    <img class="photo mx-auto" src="/img/statue.jpg" alt="Barbi in front of some statue of planes because MURICA!">

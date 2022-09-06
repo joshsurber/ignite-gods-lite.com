@@ -246,18 +246,16 @@ header a {
   }
 }
 
-main img {
+.photo {
   border: 1px solid var(--color-black);
   margin: var(--space-xs) auto;
   border-radius: 1rem;
   box-shadow: 0 0 1em hsl(var(--hsl-black) / 0.25);
 }
 @media (min-width: 50em) {
-  main img {
+  .photo {
     max-width: 60%;
     margin: var(--space-3xs);
-  }
-  main img.right {
   }
 }
 
