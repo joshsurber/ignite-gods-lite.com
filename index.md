@@ -1,5 +1,5 @@
 ---
-title: Disability claims assistance via IGNITE GOD'S LITE
+title: Disability claims assistance via IGNiTE GOD'S LITE
 layout: home
 bodyClass: home
 ---
