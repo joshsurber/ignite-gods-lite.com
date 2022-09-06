@@ -1,6 +1,7 @@
 ---
 title: Our story
 layout: page
+bodyClass: about
 ---
 
 <img src="/img/barbi-office.jpg" alt="Image of Barbi J Law" class="about center float-left">

@@ -7,22 +7,9 @@
 
     <script src="/script.js" defer></script>
     <link rel="stylesheet" href="/style.css" />
-
-    <!-- <style> -->
-    <!--   header, -->
-    <!--   .hero { -->
-    <!--     display: none; -->
-    <!--   } -->
-    <!--   main { -->
-    <!--     max-height: 30vh; -->
-    <!--     overflow: hidden; -->
-    <!--   } -->
-    <!-- </style> -->
-
-    <!-- -->
   </head>
 
-  <body>
+  <body class="{{bodyClass}}">
     <header>
       <h1>
         <a href="/">
@@ -30,19 +17,18 @@
         </a>
       </h1>
 
+      <nav>
+        <ul class="even-columns" style="--columns: 3; --gap: var(--space-s-m)">
+          <li class="home"><a href="/">Home</a></li>
+          <li class="about"><a href="/about">About</a></li>
+          <li class="testimonials"><a href="/testimonials">Testimonials</a></li>
+        </ul>
+      </nav>
       <blockquote class="bible">
         But my God shall supply all your needs according to his riches in glory
         by Christ Jesus.
         <cite>Philippians 4:19</cite>
       </blockquote>
-
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/testimonials">Testimonials</a></li>
-        </ul>
-      </nav>
     </header>
 
     {{content}}

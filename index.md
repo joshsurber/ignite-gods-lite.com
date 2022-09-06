@@ -1,6 +1,7 @@
 ---
 title: Disability claims assistance via IGNITE GOD'S LITE
 layout: home
+bodyClass: home
 ---
 
 ## What we do

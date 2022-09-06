@@ -1,6 +1,7 @@
 ---
 title: Testimonials
 layout: page
+bodyClass: testimonials
 ---
 
 > During my medical retirement process; I was enrolled into the Air Force
