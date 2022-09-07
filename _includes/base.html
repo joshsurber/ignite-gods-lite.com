@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>{{ title }}</title>
+    <title>
+      {%if title%} {{title}} {%else%} Disability claims assistance via IGNiTE
+      GOD'S LITE {%endif%}
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="/script.js" defer></script>
     <link rel="stylesheet" href="/style.css" />
@@ -30,7 +33,25 @@
       </blockquote>
     </header>
 
-    {{content}}
+    {%if heroText%}
+    <div class="hero">
+      <p class="major | center">{{heroText}}</p>
+      <p class="minor | brandbg white">
+        {%if heroMinor%}{{heroMinor}}{%else%}
+        <strong>IGNiTE</strong> (In God I Trust Eternally) are Independently
+        Operated Authorized Representatives who can assist in filing either
+        civilian or military disability claims with the Social Security
+        Administration {%endif%}
+      </p>
+    </div>
+    {%endif%}
+
+    <main class="container">
+      {%if title%}
+      <h2>{{title}}</h2>
+      {%endif%}
+      <div class="flow">{{content}}</div>
+    </main>
 
     <footer class="footer | even-columns white brandbg" style="">
       <blockquote class="bible | full-grid">
@@ -66,7 +87,7 @@
           class="nohover"
           ><img
             src="https://seal-austin.bbb.org/seals/blue-seal-200-42-bbb-1000171401.png"
-            style="border: 0"
+            style="border: 0; background: white"
             alt="IGNiTE GOD'S LITE LLC BBB Business Review"
         /></a>
       </p>

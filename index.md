@@ -1,7 +1,7 @@
 ---
-title: Disability claims assistance via IGNiTE GOD'S LITE
-layout: home
+layout: base
 bodyClass: home
+heroText: Professional assistance for military and civilians filing disability claims
 ---
 
 ## What we do
@@ -26,22 +26,22 @@ We can assist you in filing your disability claim by:
 For email inquiries, just fill out the form below and we will contact you.
 
 <div class="even-columns">
-  <form class="center flow">
+  <form action="/military" class="center flow" method="post" name="military" netlify>
     <fieldset>
       <legend>Military</legend>
-      <img src="img/military.png" alt="Person in military attire" class="mx-auto">
+      <img src="/img/military.png" alt="Person in military attire" class="mx-auto">
       <input type="email" name="email" placeholder="Your email address"/>
-      <input type="hidden" name="type" value="military" />
+      <input type="hidden" name="subject" value="Military claim" />
       <button type="submit">Submit</button>
     </fieldset>
   </form>
 
-  <form class="center flow">
+  <form action="/civilian" class="center flow" data-topmargin="0" method="post" name="civilian" netlify>
     <fieldset>
       <legend>Civilian</legend>
-      <img src="img/civilian.png" alt="Person in civilian attire" class="mx-auto">
+      <img src="/img/civilian.png" alt="Person in civilian attire" class="mx-auto">
       <input type="email" name="email" placeholder="Your email address"/>
-      <input type="hidden" name="type" value="civilian" />
+      <input type="hidden" name="subject" value="Civilian claim" />
       <button type="submit">Submit</button>
     </fieldset>
   </form>

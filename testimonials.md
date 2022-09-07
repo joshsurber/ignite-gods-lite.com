@@ -1,6 +1,6 @@
 ---
 title: Testimonials
-layout: page
+layout: base
 bodyClass: testimonials
 ---
 
