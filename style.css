@@ -220,14 +220,15 @@ header cite {
 header a {
   color: var(--color-accent);
 }
-.home li.home,
-.about li.about,
-.testimonials li.testimonials {
+:is(.home li.home, .about li.about, .testimonials li.testimonials) {
   background-color: var(--color-white);
   --color-accent: var(--color-brand);
   padding-inline: var(--space-3xs-2xs);
   box-shadow: 0 0 1em var(--color-black);
   border-radius: 0.5em;
+}
+:is(.home li.home, .about li.about, .testimonials li.testimonials) a::before {
+  display: none;
 }
 @media (min-width: 50em) {
   header {
@@ -311,6 +312,38 @@ main blockquote::after {
 
 form img {
   filter: grayscale(70%);
+}
+
+.trusted {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  background: url("https://cdn.ywxi.net/meter/ignite-gods-lite.com/205.svg?ts=1626454441594&amp;l=en-US")
+    center center / 92px 38px no-repeat rgb(255, 255, 255);
+  max-width: none;
+  max-height: none;
+  position: fixed;
+  height: 38px !important;
+  width: 92px !important;
+  overflow: hidden !important;
+  bottom: -13px;
+  right: 0px !important;
+  z-index: 1000003 !important;
+  cursor: pointer !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px 0px;
+  border-top-left-radius: 2px;
+  transition: all 0.2s ease 0s;
+  bottom: -13px;
+}
+.trusted a {
+  position: absolute;
+  inset: 0;
+}
+.trusted:hover {
+  bottom: 0;
+}
+a.nohover::before {
+  display: none;
 }
 
 /*}*/
