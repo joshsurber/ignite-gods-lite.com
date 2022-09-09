@@ -1,4 +1,5 @@
 /* vim set fdm=marker fmr={,} */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap");
 /* RESET {*/
 
 *,
@@ -60,7 +61,8 @@ img {
   --size-text: var(--step--1);
   --size-small: var(--step--2);
 
-  --font-heading: "Playfair Display", serif;
+  --font-heading: "Roboto", sans-serif;
+  --font-hero: "Roboto Condensed", sans-serif;
 
   --fw-heading: 700;
   --fw-bold: 700;
@@ -72,7 +74,7 @@ img {
   --step-1: clamp(1.58rem, calc(1.46rem + 0.59vw), 1.88rem);
   --step-2: clamp(1.89rem, calc(1.71rem + 0.89vw), 2.34rem);
   --step-3: clamp(2.27rem, calc(2.01rem + 1.29vw), 2.93rem);
-  --step-4: clamp(2.72rem, calc(2.36rem + 1.83vw), 3.66rem);
+  --step-4: clamp(2.52rem, calc(2.36rem + 1.83vw), 3.66rem);
   --step-5: clamp(3.27rem, calc(2.75rem + 2.56vw), 4.58rem);
   --space-3xs: clamp(0.31rem, calc(0.29rem + 0.12vw), 0.38rem);
   --space-2xs: clamp(0.69rem, calc(0.66rem + 0.12vw), 0.75rem);
@@ -100,16 +102,14 @@ body {
   font-family: system-ui, sans-serif;
   line-height: 1.5;
 }
-a,
-.link {
+:is(a, .link) {
   cursor: pointer;
   color: var(--color-brand);
   font-weight: var(--fw-bold);
   text-decoration: none;
   position: relative;
 }
-a::before,
-.link::before {
+:is(a, .link)::before {
   position: absolute;
   content: "";
   inset: 0;
@@ -118,7 +118,7 @@ a::before,
   transform-origin: right;
   transition: transform 350ms ease-in-out;
 }
-a:is(:hover, :focus-visible)::before {
+:is(a, .link):is(:hover, :focus-visible)::before {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -135,6 +135,7 @@ h1 {
 h2 {
   margin-block: 1em;
   font-size: var(--size-subhead);
+  font-family: var(--font-heading);
   color: var(--color-brand);
   line-height: 1;
 }
@@ -217,17 +218,17 @@ header cite {
   display: block;
   text-align: right;
 }
-header a {
+header :is(a, .link) {
   color: var(--color-accent);
 }
-:is(.home li.home, .about li.about, .testimonials li.testimonials) {
+:is(.home .home, .about .about, .testimonials .testimonials) {
   background-color: var(--color-white);
   --color-accent: var(--color-brand);
   padding-inline: var(--space-3xs-2xs);
   box-shadow: 0 0 1em var(--color-black);
   border-radius: 0.5em;
 }
-:is(.home li.home, .about li.about, .testimonials li.testimonials) a::before {
+:is(.home .home, .about .about, .testimonials .testimonials) a::before {
   display: none;
 }
 @media (min-width: 50em) {
@@ -239,9 +240,9 @@ header a {
       "h1 . bq"
       "h1 . nav";
   }
-  .home li.home,
-  .about li.about,
-  .testimonials li.testimonials {
+  .home .home,
+  .about .about,
+  .testimonials .testimonials {
     border-radius: 0.5em 0.5em 0 0;
     box-shadow: 0 0 0;
   }
@@ -269,6 +270,7 @@ header a {
   background-image: url(/img/Flag-Banner.jpg);
   background-size: cover;
   background-position: center;
+  font-family: var(--font-hero);
   font-size: var(--size-hero);
   text-shadow: 0 0 2px var(--color-white);
   min-height: 50vh;
@@ -314,34 +316,6 @@ form img {
   filter: grayscale(70%);
 }
 
-.trusted {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  background: url("https://cdn.ywxi.net/meter/ignite-gods-lite.com/205.svg?ts=1626454441594&amp;l=en-US")
-    center center / 92px 38px no-repeat rgb(255, 255, 255);
-  max-width: none;
-  max-height: none;
-  position: fixed;
-  height: 38px !important;
-  width: 92px !important;
-  overflow: hidden !important;
-  bottom: -13px;
-  right: 0px !important;
-  z-index: 1000003 !important;
-  cursor: pointer !important;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px 0px;
-  border-top-left-radius: 2px;
-  transition: all 0.2s ease 0s;
-  bottom: -13px;
-}
-.trusted a {
-  position: absolute;
-  inset: 0;
-}
-.trusted:hover {
-  bottom: 0;
-}
 a.nohover::before {
   display: none;
 }
