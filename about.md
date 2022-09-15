@@ -6,7 +6,7 @@ bodyClass: about
 
 <img src="/img/barbi-office.jpg" alt="Image of Barbi J Law" class="photo float-left">
 In 2015, I struggled with an illness that severely interfered with my
-ability to work competitively. This illness ultimately leads to the need
+ability to work competitively. This illness ultimately lead to the need
 for my resignation in August 2015. After months of recuperation I was
 asked to assist a dear friend and mentor by representing her at a Social
 Security Disability Hearing. Her hearing was awarded favorably and my
