@@ -20,10 +20,13 @@
       </h1>
 
       <nav>
-        <ul class="even-columns" style="--columns: 3; --gap: var(--space-s-m)">
-          <li class="home"><a href="/">Home</a></li>
-          <li class="about"><a href="/about">About</a></li>
-          <li class="testimonials"><a href="/testimonials">Testimonials</a></li>
+        <ul class="flex" style="--gap: var(--space-s-m)">
+          <li class="nohover home"><a href="/">Home</a></li>
+          <li class="nohover about"><a href="/about">About</a></li>
+          <li class="nohover testimonials">
+            <a href="/testimonials">Testimonials</a>
+          </li>
+          <li class="nohover privacy"><a href="/privacy">Privacy</a></li>
         </ul>
       </nav>
       <blockquote class="bible">
@@ -53,15 +56,13 @@
       <div class="flow">{{content}}</div>
     </main>
 
-    <footer class="footer | even-columns white brandbg" style="">
+    <footer class="footer | three even-columns | white brandbg">
       <blockquote class="bible | full-grid">
         And of some have compassion, making a difference.
         <cite>Jude 1.22</cite>
       </blockquote>
 
       <ul class="contact">
-        <li><a href="/about">About us</a></li>
-        <li><a href="/testimonials">Testimonials</a></li>
         <li>
           Email:
           <a href="mailto:jude1.22@ignite-gods-lite.com">
@@ -91,7 +92,7 @@
         /></a>
       </p>
 
-      <p class="copyright">
+      <p class="copyright | full-grid">
         Copyright 2016 – <span id="thisyear">{%year%}</span>, Barbi J Law and
         IGNiTE GOD'S LITE, LLC
       </p>
