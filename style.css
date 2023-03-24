@@ -308,6 +308,7 @@ header :is(a, .link) {
 .hero .minor {
   padding: var(--space-3xs) var(--space-m);
   font-size: var(--size-small);
+  font-weight: bold;
   text-align: center;
 }
 
