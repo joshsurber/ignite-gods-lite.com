@@ -23,7 +23,7 @@ We can assist you in filing your disability claim by:
 
 ## Application process for <abbr title="Social Security Disability Insurance">SSDI</abbr>
 
-For email inquiries, just fill out the form below and we will contact you.
+For email inquiries, just fill out the form below to begin setting up an appointment.
 
 <div class="even-columns">
   <form action="/military" class="center flow" method="post" name="military" netlify>
