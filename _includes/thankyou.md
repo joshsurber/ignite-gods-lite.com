@@ -13,4 +13,6 @@ Barbi J Law is excited to have an opportunity to speak to you by phone to share 
 
 Please note, after scheduling your appointment, it is your responsibility to initiate the contact by phone, to 210-441-2319 at the time you have scheduled in the Central Standard Time Zone.
 
+Payment terms and options will be discussed at the initial screening appointment. Initial phone screen is at **NO CHARGE**.
+
 If you forget your appointment, please feel free to email IGNiTE GOD’S LITE, LLC at <jude1.22@ignite-gods-lite.com> to be given an opportunity to reschedule your appointment.
