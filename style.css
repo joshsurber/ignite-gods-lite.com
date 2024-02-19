@@ -153,6 +153,12 @@ em {
 strong {
   font-weight: var(--fw-bold);
 }
+strong.bigred {
+    font-size: 1.25em;
+    color:red;
+    text-transform:uppercase;
+    display:inline-block;
+}
 ul {
   list-style-type: none;
 }

@@ -6,7 +6,7 @@ bodyClass: thankyou
 
 Hello and thank you for your interest in IGNiTE GOD’S LITE LLC!
 
-Barbi J Law is excited to have an opportunity to speak to you by phone to share how IGNiTE GOD’S LITE, LLC can assist you in filing your Social Security Disability Claim. Two more steps to complete:
+Barbi J Law is excited to have an opportunity to speak to you by phone to share how IGNiTE GOD’S LITE, LLC can assist you in filing your Social Security Disability Claim. <strong class="bigred">Two more steps to complete:</strong>
 
 1. [Schedule your phone consultation](https://app.acuityscheduling.com/schedule.php?owner=15801170)
 2. [Complete this short information form]({{formLink}})
