@@ -1,0 +1,116 @@
+---
+import '../styles/style.css';
+
+const { title, bodyClass, heroText, heroMinor } =
+  Astro.props.frontmatter || Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      {
+        title
+          ? `${title} | IGNiTE GOD'S LITE`
+          : "Disability claims assistance via IGNiTE GOD'S LITE"
+      }
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.ywxi.net/js/1.js" async></script>
+  </head>
+
+  <body class={bodyClass}>
+    <header>
+      <h1>
+        <a href="/">
+          <img src="/img/logo.png" alt="IGNiTE GOD’S LITE LLC" class="logo" />
+        </a>
+      </h1>
+
+      <nav>
+        <ul>
+          <li class="home"><a href="/">Home</a></li>
+          <li class="about"><a href="/about">About</a></li>
+          <li class="testimonials">
+            <a href="/testimonials">Testimonials</a>
+          </li>
+        </ul>
+      </nav>
+      <blockquote class="bible">
+        But my God shall supply all your need according to his riches in glory
+        by Christ Jesus.
+        <cite>Philippians 4:19</cite>
+      </blockquote>
+    </header>
+
+    {
+      heroText && (
+        <div class="hero">
+          <p class="major | center">{heroText}</p>
+          <p class="minor | brandbg white">
+            {heroMinor ? (
+              heroMinor
+            ) : (
+              <>
+                <strong>IGNiTE</strong> (In God I Trust Eternally) are
+                Independently Operated Authorized Representatives who can assist
+                in filing either civilian or military disability claims with the
+                Social Security Administration
+              </>
+            )}
+          </p>
+        </div>
+      )
+    }
+
+    <main>
+      {title && <h2>{title}</h2>}
+      <slot />
+    </main>
+
+    <footer class="footer | three even-columns | white brandbg">
+      <blockquote class="bible | full-grid">
+        And of some have compassion, making a difference.
+        <cite>Jude 1.22</cite>
+      </blockquote>
+
+      <ul class="contact">
+        <li>
+          Email:
+          <a href="mailto:jude1.22@ignite-gods-lite.com">
+            jude1.22@ignite-gods-lite.com</a
+          >
+        </li>
+        <li>Phone: <a href="tel:2104412319">210-441-2319</a></li>
+      </ul>
+
+      <div class="barbi">
+        <p>
+          Barbi J Law is a Third Party, Non Attorney, Authorized Representative
+          who can assist you in filing your military or civilian claim with the
+          Social Security Administration
+        </p>
+      </div>
+
+      <p class="bbb | center">
+        <a
+          href="https://www.bbb.org/us/tx/schertz/profile/disability/ignite-gods-lite-llc-0825-1000171401/#sealclick"
+          target="_blank"
+          rel="nofollow"
+          ><img
+            src="https://seal-austin.bbb.org/seals/blue-seal-293-61-whitetxt-bbb-1000171401.png"
+            style="border: 0"
+            alt="IGNiTE GOD'S LITE LLC BBB Business Review"
+          /></a
+        >
+      </p>
+
+      <p class="copyright | full-grid">
+        Copyright 2016 – <span id="thisyear">{currentYear}</span>, Barbi J Law
+        and IGNiTE GOD'S LITE, LLC | <a href="/privacy">Privacy Policy</a>
+      </p>
+    </footer>
+  </body>
+</html>

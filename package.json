@@ -4,9 +4,11 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "eleventy --serve",
-    "build":"eleventy"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,11 @@
     "url": "https://github.com/joshsurber/ignite/issues"
   },
   "homepage": "https://github.com/joshsurber/ignite#readme",
+  "dependencies": {
+    "astro": "^6.4.4"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2"
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
