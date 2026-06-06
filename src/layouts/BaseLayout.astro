@@ -18,14 +18,14 @@ const currentYear = new Date().getFullYear();
       }
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.ywxi.net/js/1.js" async></script>
+    <script src="https://cdn.ywxi.net/js/1.js" async is:inline></script>
   </head>
 
   <body class={bodyClass}>
     <header>
       <h1>
         <a href="/">
-          <img src="/img/logo.png" alt="IGNiTE GOD’S LITE LLC" class="logo" />
+          <img src="/img/logo.png" alt="IGNiTE GOD’S LITE Inc" class="logo" />
         </a>
       </h1>
 
@@ -70,47 +70,44 @@ const currentYear = new Date().getFullYear();
       <slot />
     </main>
 
-    <footer class="footer | three even-columns | white brandbg">
-      <blockquote class="bible | full-grid">
-        And of some have compassion, making a difference.
-        <cite>Jude 1.22</cite>
-      </blockquote>
+    <footer></footer>
+    <blockquote class="bible">
+      And of some have compassion, making a difference.
+      <cite>Jude 1.22</cite>
+    </blockquote>
 
-      <ul class="contact">
-        <li>
-          Email:
-          <a href="mailto:jude1.22@ignite-gods-lite.com">
-            jude1.22@ignite-gods-lite.com</a
-          >
-        </li>
-        <li>Phone: <a href="tel:2104412319">210-441-2319</a></li>
-      </ul>
-
-      <div class="barbi">
-        <p>
-          Barbi J Law is a Third Party, Non Attorney, Authorized Representative
-          who can assist you in filing your military or civilian claim with the
-          Social Security Administration
-        </p>
-      </div>
-
-      <p class="bbb | center">
-        <a
-          href="https://www.bbb.org/us/tx/schertz/profile/disability/ignite-gods-lite-llc-0825-1000171401/#sealclick"
-          target="_blank"
-          rel="nofollow"
-          ><img
-            src="https://seal-austin.bbb.org/seals/blue-seal-293-61-whitetxt-bbb-1000171401.png"
-            style="border: 0"
-            alt="IGNiTE GOD'S LITE LLC BBB Business Review"
-          /></a
+    <ul>
+      <li>
+        Email:
+        <a href="mailto:jude1.22@ignite-gods-lite.com">
+          jude1.22@ignite-gods-lite.com</a
         >
-      </p>
+      </li>
+      <li>Phone: <a href="tel:2104412319">210-441-2319</a></li>
+    </ul>
 
-      <p class="copyright | full-grid">
-        Copyright 2016 – <span id="thisyear">{currentYear}</span>, Barbi J Law
-        and IGNiTE GOD'S LITE, LLC | <a href="/privacy">Privacy Policy</a>
-      </p>
-    </footer>
+    <p>
+      Barbi J Law is a Third Party, Non Attorney, Authorized Representative who
+      can assist you in filing your military or civilian claim with the Social
+      Security Administration
+    </p>
+
+    <p>
+      <a
+        href="https://www.bbb.org/us/tx/schertz/profile/disability/ignite-gods-lite-llc-0825-1000171401/#sealclick"
+        target="_blank"
+        rel="nofollow"
+        ><img
+          src="https://seal-austin.bbb.org/seals/blue-seal-293-61-whitetxt-bbb-1000171401.png"
+          style="border: 0"
+          alt="IGNiTE GOD'S LITE LLC BBB Business Review"
+        /></a
+      >
+    </p>
+
+    <p>
+      Copyright 2016 – <span id="thisyear">{currentYear}</span>, Barbi J Law and
+      IGNiTE GOD'S LITE, LLC | <a href="/privacy">Privacy Policy</a>
+    </p>
   </body>
 </html>
