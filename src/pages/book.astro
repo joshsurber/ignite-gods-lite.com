@@ -1,0 +1,83 @@
+---
+import Page from '../layouts/Page.astro';
+import Card from '../components/Card.astro';
+import Booking from '../components/Booking.astro';
+import Button from '../components/Button.astro';
+
+const title = 'Book an appointment';
+
+// Replace this URL with the Google Calendar booking link once she provides it.
+// Default placeholder uses her existing Acuity link.
+const schedulingUrl =
+  'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0nhqIGybhpqREgcMAk4eioz0gwd94oYIWxsSfnvL6C3BtuTLvx0Fz-aS29ys__UMYWlD6uhnww?gv=true';
+const milform =
+  'https://docs.google.com/forms/d/e/1FAIpQLSfjnnKbKruvFg95AclZDFG-PJSonyHz8MVz3QMXRCyezm-kag/viewform?c=0&w=1';
+const civform =
+  'https://docs.google.com/forms/d/e/1FAIpQLSdvK4z-mIxaR2b5yq11I1_5x8mYyr9L974zRuRyjrpU-UQGCw/viewform';
+---
+
+<Page {title} bodyClass="thankyou">
+  <p>Hello and thank you for your interest in IGNiTE GOD’S LITE LLC!</p>
+
+  <p>
+    Barbi J Law is excited to have an opportunity to speak to you by phone to
+    share how IGNiTE GOD’S LITE, LLC can assist you in filing your Social
+    Security Disability Claim. Please complete the following two remaining
+    steps:
+  </p>
+
+  <div>
+    <Card title="Complete your short information form" step="1">
+      <p>
+        Please fill out this form prior to your scheduled consultation so Barbi
+        can review your details ahead of time.
+      </p>
+
+      <Button href={milform} ext="true">
+        Military Claims Information Form
+      </Button>
+      <Button href={civform} ext="true">
+        Civilian Claims Information Form
+      </Button>
+    </Card>
+
+    <Card title="Schedule your phone consultation" step="2">
+      <p>
+        Choose a time that works best for you directly below. Once booked, it
+        will automatically sync to Barbi's calendar.
+      </p>
+
+      <Booking url={schedulingUrl} />
+    </Card>
+
+    <Card title="Call for your phone consultation" step="3">
+      <p>
+        Please note, after scheduling your appointment, it is your
+        responsibility to initiate the contact by phone to our scheduling
+        representative, <strong>Tami at 231-519-8014</strong>, at the time you
+        have scheduled.
+      </p>
+
+      <p>
+        Payment terms and options will be discussed at the initial screening
+        appointment. Initial phone screen is at <strong>NO CHARGE</strong>.
+      </p>
+
+      <p>
+        If you forget your appointment, please feel free to email IGNiTE GOD’S
+        LITE, LLC at <a href="mailto:jude1.22@ignite-gods-lite.com"
+          >jude1.22@ignite-gods-lite.com</a
+        > to be given an opportunity to reschedule your appointment.
+      </p>
+    </Card>
+  </div>
+</Page>
+
+<style>
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+</style>

@@ -1,22 +1,34 @@
 /* vim set fdm=marker fmr={,} */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap');
-/* RESET {*/
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font: inherit;
+  /* font: inherit; */
 }
-html:focus-within {
+html {
   scroll-behavior: smooth;
-  /* Secondary: Aqua / Sky Blue (#4FC3F7) */
 }
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: system-ui, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  font-size: var(--fs-0);
+
+  background: linear-gradient(
+    135deg,
+    hsl(209 68% 72%) 0%,
+    hsl(210 20% 99%) 100%
+  ); /* #89bae8 to #fdfefe */
+  background-attachment: fixed;
+  background-size: 100vw 100vh;
+  background-position: top left;
+  background-repeat: no-repeat;
 }
 picture,
 img {
@@ -25,7 +37,7 @@ img {
   height: auto;
 }
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
+  html {
     scroll-behavior: auto;
   }
   *,
@@ -38,51 +50,17 @@ img {
   }
 }
 
-/*}*/
-/* BASE STYLES {*/
-:root {
-  /* ==========================================================================
-     BASE COLORS (Using modern space-separated HSL/HSLA syntax)
-     ========================================================================== */
-  --color-surface: hsl(40 43% 98%); /* Cream White (#FDFBF7) */
-  --color-text: hsl(0 0% 11%); /* Charcoal Black (#1C1C1C) */
-  --color-brand: hsl(234 66% 30%); /* Rich Navy Blue (#1A237E) */
-
-  /* Deep Teal: High-contrast, completely distinct from the Navy brand */
-  --color-accent: hsl(195 100% 26%);
-
-  /* ==========================================================================
-     DERIVED STATES (Interpolated purely in HSL)
-     ========================================================================== */
-
-  /* Hover state: Darken by mixing 15% black directly inside the HSL space */
-  --color-accent-hover: color-mix(
-    in hsl,
-    var(--color-accent),
-    hsl(0 0% 0%) 15%
-  );
-
-  /* Background tint: Mix 8% of our accent color directly into the surface */
-  --color-accent-tint: color-mix(
-    in hsl,
-    var(--color-accent),
-    var(--color-surface) 92%
-  );
-
-  /* Alpha overlay: Mix 30% of the brand color with transparency */
-  --color-brand-overlay: color-mix(
-    in hsl,
-    var(--color-brand),
-    hsla(0 0% 0% / 0%) 70%
-  );
-}
-body {
-  color: var(--color-text);
-  background-color: var(--color-surface);
-}
+a,
 :any-link {
   color: var(--color-accent);
   &:hover {
-    color: var(--color-accent-hover);
+    color: var(--color-brand);
   }
+}
+main {
+  margin-top: var(--space-l);
+}
+main > * + *,
+main li + li {
+  margin-top: 0.5em;
 }

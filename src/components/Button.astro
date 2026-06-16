@@ -1,0 +1,43 @@
+---
+const { href, ext = false } = Astro.props;
+const rel = ext ? 'noopener noreferrer' : '';
+const target = ext ? '_blank' : '';
+---
+
+<a {href} {target} {rel}><slot /></a>
+
+<style>
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: var(--space-xs);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+
+    background-color: var(--color-accent);
+    box-shadow: 0 4px 6px rgba(196, 47, 14, 0.15);
+
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      transform 0.1s ease;
+
+    &:hover {
+      background-color: var(--color-glow);
+      color: #ffffff;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+</style>

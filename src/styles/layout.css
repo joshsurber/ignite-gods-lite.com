@@ -1,0 +1,99 @@
+main > *,
+.full-width > * {
+  grid-column: content;
+}
+main,
+.full-width {
+  --minimum-content-padding: 2rem;
+
+  /** TRACK WIDTHS **/
+  --full-max-width: 1fr;
+  --wide-max-width: 80ch;
+  --content-max-width: 65ch;
+  --narrow-max-width: 40ch;
+
+  /** TRACK SIZES **/
+  --full: minmax(var(--minimum-content-padding), 1fr);
+  --wide: minmax(
+    0,
+    calc((var(--wide-max-width) - var(--content-max-width)) * 0.5)
+  );
+  --content: minmax(
+    0,
+    calc((var(--content-max-width) - var(--narrow-max-width)) * 0.5)
+  );
+  --narrow: min(
+    var(--narrow-max-width),
+    100% - var(--minimum-content-padding) * 2
+  );
+
+  display: grid;
+  grid-template-columns:
+    [full-start]
+    var(--full)
+    [wide-start]
+    var(--wide)
+    [content-start]
+    var(--content)
+    [narrow-start]
+    var(--narrow)
+    [narrow-end]
+    var(--content)
+    [content-end]
+    var(--wide)
+    [wide-end]
+    var(--full)
+    [full-end];
+}
+
+/** CLASSES **/
+.full {
+  grid-column: full;
+}
+.full-start {
+  grid-column-start: full-start;
+}
+.full-end {
+  grid-column-end: full-end;
+}
+
+.wide {
+  grid-column: wide;
+}
+.wide-start {
+  grid-column-start: wide-start;
+}
+.wide-end {
+  grid-column-end: wide-end;
+}
+
+.content {
+  grid-column: content;
+}
+.content-start {
+  grid-column-start: content-start;
+}
+.content-end {
+  grid-column-end: content-end;
+}
+
+.narrow {
+  grid-column: narrow;
+}
+.narrow-start {
+  grid-column-start: narrow-start;
+}
+.narrow-end {
+  grid-column-end: narrow-end;
+}
+
+.full-width {
+  grid-column: full;
+}
+.full-content,
+.full-content-nopad {
+  grid-column: full;
+}
+.full-content {
+  padding-inline: var(--minimum-content-padding);
+}

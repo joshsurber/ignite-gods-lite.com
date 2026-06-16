@@ -1,0 +1,43 @@
+---
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/style.css';
+import '../styles/layout.css';
+import '../styles/vars.css';
+
+const {
+  title,
+  bodyClass,
+  hero = false,
+} = Astro.props.frontmatter || Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      {
+        title
+          ? `${title} | IGNiTE GOD'S LITE`
+          : "Disability claims assistance via IGNiTE GOD'S LITE"
+      }
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.ywxi.net/js/1.js" async is:inline></script>
+  </head>
+
+  <body class={bodyClass}>
+    <Header />
+
+    {hero && <Hero />}
+
+    <main class="page-layout">
+      {title && <h2>{title}</h2>}
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

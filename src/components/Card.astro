@@ -1,0 +1,64 @@
+---
+const { title, id, step = false } = Astro.props;
+---
+
+<div {id}>
+  {step && <span>Step {step}</span>}
+  {title && <h3>{title}</h3>}
+  <slot />
+</div>
+
+<style>
+  div {
+    max-width: 65ch;
+    margin-inline: auto;
+
+    padding: 1.5rem;
+    border: 1px solid hsl(from var(--color-text) h s l / 0.1);
+    border-radius: 12px;
+
+    text-align: center;
+
+    background: var(--color-surface);
+
+    transition:
+      transform 0.5s ease,
+      box-shadow 0.5s ease;
+    box-shadow: 0 4px 12px hsl(from var(--color-text) h s l / 0.1);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px hsl(from var(--color-text) h s l / 0.1);
+    }
+
+    p,
+    li {
+      text-align: left;
+    }
+  }
+
+  span {
+    display: inline-block;
+    margin-inline: auto;
+
+    padding: 0.25rem 0.75rem;
+    border-radius: 100vw;
+    margin-bottom: 0.75rem;
+
+    color: var(--color-brand);
+    font-size: var(--fs--1);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    background-color: var(--color-accent-glow);
+  }
+
+  h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-brand);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+</style>

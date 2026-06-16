@@ -1,0 +1,57 @@
+---
+import Button from '../components/Button.astro';
+---
+
+<section>
+  <h1>Professional Disability Claims Support for Veterans & Civilians</h1>
+  <p>
+    Filing for benefits can be confusing. The independent authorized
+    representatives at <strong>IGNiTE</strong> (In God I Trust Eternally) guide you
+    through the Social Security Administration process every step of the way.
+  </p>
+  <div>
+    <Button href="#book">Get Started Today</Button>
+  </div>
+</section>
+
+<!-- <section> -->
+<!--   <h1> -->
+<!--     Professional assistance for military and civilians filing disability claims -->
+<!--   </h1> -->
+<!--   <p> -->
+<!--     <strong>IGNiTE</strong> (In God I Trust Eternally) are Independently Operated -->
+<!--     Authorized Representatives who can assist in filing either civilian or military -->
+<!--     disability claims with the Social Security Administration -->
+<!--   </p> -->
+<!-- </section> -->
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: var(--space-l);
+
+    padding: var(--space-m);
+    min-height: 50vh;
+
+    color: var(--color-text);
+
+    --_color: var(--color-surface);
+    background-image:
+      linear-gradient(
+        hsl(from var(--_color) h s l / 0%),
+        hsl(from var(--_color) h s l / 50%)
+      ),
+      url(/img/flagbg.jpg);
+    background-size: cover;
+    background-color: var(--color-text);
+    box-shadow: 0 0 1rem gray;
+  }
+  h1 {
+    font-size: var(--fs-3);
+  }
+  div {
+    margin-inline: auto;
+  }
+</style>

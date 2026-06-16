@@ -1,0 +1,75 @@
+<header>
+  <a href="/" class="logo">
+    <img src="/img/logo.png" alt="IGNiTE GOD’S LITE Inc" />
+  </a>
+
+  <nav>
+    <ul>
+      <li class="home"><a href="/">Home</a></li>
+      <li class="about"><a href="/about">About</a></li>
+      <li class="testimonials">
+        <a href="/testimonials">Testimonials</a>
+      </li>
+    </ul>
+  </nav>
+  <blockquote class="bible">
+    But my God shall supply all your need according to his riches in glory by
+    Christ Jesus.
+    <cite>Philippians 4:19</cite>
+  </blockquote>
+</header>
+
+<style>
+  header {
+    display: grid;
+    grid-template:
+      'logo quote'
+      'logo nav';
+    background: var(--color-logo);
+  }
+  a.logo {
+    grid-area: logo;
+  }
+  nav {
+    grid-area: nav;
+  }
+  blockquote {
+    color: var(--color-surface);
+    grid-area: quote;
+    font-size: var(--fs--2);
+    padding: 1em;
+  }
+  .logo img {
+    width: 20rem;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 75%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 75%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  ul {
+    --_spacing: var(--space-xl);
+    display: flex;
+    justify-content: end;
+    gap: var(--_spacing);
+
+    margin-inline: auto var(--_spacing);
+    padding: 0;
+  }
+  nav a {
+    display: inline-block;
+    color: var(--color-glow);
+    transition: all 0.5s;
+    text-decoration: none;
+    &:hover {
+      color: var(--color-glow);
+      text-shadow: 0 0 0.125em;
+      transform: translate(0, -4px);
+    }
+  }
+</style>

@@ -1,11 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Page from '../layouts/Page.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
 ---
 
-<BaseLayout
-  bodyClass="home"
-  heroText="Professional assistance for military and civilians filing disability claims"
->
+<Page bodyClass="home" hero="true">
   <h2>What we do</h2>
 
   <p>We can assist you in filing your disability claim by:</p>
@@ -48,74 +47,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </li>
   </ul>
 
-  <h2>
-    Application process for <abbr title="Social Security Disability Insurance"
-      >SSDI</abbr
-    >
-  </h2>
+  <!-- <h2>Application process for SSDI</h2> -->
 
   <!-- For email inquiries, just fill out the form below to begin setting up an appointment. -->
 
-  <p>To schedule a phone consultation follow 3 Simple steps...</p>
-  <ol>
-    <li>
-      Enter your email address & you will be automatically directed to the next
-      page, then scroll down for steps 2&3.
-    </li>
-    <li>Schedule your phone consultation</li>
-    <li>Complete a short information form</li>
-  </ol>
+  <Card title="Application process for SSDI" id="book">
+    <p>Schedule a phone consultation in 3 simple steps...</p>
+    <ol>
+      <li>Fill out a short information form</li>
+      <li>Book a time that works for you</li>
+      <li>Call us for your appointment</li>
+    </ol>
 
-  <div class="even-columns">
-    <form
-      action="/military"
-      class="center flow"
-      method="post"
-      name="military"
-      netlify
-    >
-      <fieldset>
-        <legend>Military</legend>
-        <img
-          src="/img/military.png"
-          alt="Person in military attire"
-          class="mx-auto"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your email address"
-          required
-        />
-        <input type="hidden" name="subject" value="Military claim" />
-        <button type="submit">Submit</button>
-      </fieldset>
-    </form>
-
-    <form
-      action="/civilian"
-      class="center flow"
-      data-topmargin="0"
-      method="post"
-      name="civilian"
-      netlify
-    >
-      <fieldset>
-        <legend>Civilian</legend>
-        <img
-          src="/img/civilian.png"
-          alt="Person in civilian attire"
-          class="mx-auto"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your email address"
-          required
-        />
-        <input type="hidden" name="subject" value="Civilian claim" />
-        <button type="submit">Submit</button>
-      </fieldset>
-    </form>
-  </div>
-</BaseLayout>
+    <Button href="/book">Book an appointment</Button>
+  </Card>
+</Page>
