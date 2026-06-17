@@ -4,22 +4,22 @@ let v:this_session=expand("<sfile>:p")
 doautoall SessionLoadPre
 silent only
 silent tabonly
-cd ~/ignite-gods-lite.com
+cd ~/ignite-gods-lite.com/src
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 src/pages/index.astro
-badd +1 ~/ignite-gods-lite.com/src/pages/../layouts/BaseLayout.astro
-badd +10 src/styles/style.css
-badd +0 src/pages/
+badd +66 ~/.config/nvim/lua/plugins/lsp.lua
+badd +20 components/Booking.astro
+badd +1 src/pages/
+badd +0 ~/ignite-gods-lite.com/astro.config.mjs
 argglobal
 %argdel
 $argadd src/pages/
-edit src/styles/style.css
+edit ~/ignite-gods-lite.com/astro.config.mjs
 argglobal
-balt ~/ignite-gods-lite.com/src/pages/../layouts/BaseLayout.astro
+balt components/Booking.astro
 setlocal foldmethod=expr
 setlocal foldexpr=nvim_treesitter#foldexpr()
 setlocal foldmarker={{{,}}}
@@ -28,12 +28,12 @@ setlocal foldlevel=1
 setlocal foldminlines=1
 setlocal foldnestmax=3
 setlocal foldenable
-let s:l = 2 - ((1 * winheight(0) + 21) / 42)
+let s:l = 1 - ((0 * winheight(0) + 21) / 42)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
-normal! 011|
+keepjumps 1
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

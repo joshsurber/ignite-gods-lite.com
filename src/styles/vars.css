@@ -5,6 +5,8 @@
   --color-accent: hsl(12 85% 42%); /* Ignite Crimson (#c42f0e) */
   --color-glow: hsl(43 90% 45%); /* God's Lite Gold (#db9a0a) */
   --color-logo: hsl(218, 41%, 17%);
+  --color-shadow: silver;
+  --box-shadow: 0 0 1rem var(--color-shadow);
 
   /* Flag colors */
   --color-surface: hsl(0 0% 100%); /* Pure White (#FFFFFF) */

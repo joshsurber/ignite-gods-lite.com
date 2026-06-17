@@ -1,9 +1,29 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Page from '../layouts/Page.astro';
+import Card from '../components/Card.astro';
+import Quote from '../components/Quote.astro';
 ---
 
-<BaseLayout title="Testimonials" bodyClass="testimonials">
-  <blockquote>
+<Page title="Testimonials" bodyClass="testimonials">
+  <Quote>
+    When I wanted to apply for SSDI after being released from the service, Barbi
+    was outstanding. I can honestly state that the filing procedure would have
+    been far more challenging and frustrating without her assistance. The last
+    thing you want when you already have major health problems is to have to
+    cope with the additional stress of navigating the Social Security system by
+    yourself. Throughout the entire procedure, <strong
+      >Barbi was sympathetic, understanding, and caring</strong
+    >. She took the time to fully explain everything, respond to my inquiries,
+    and provide me with constant assistance. Years later, I still employ her
+    services for my SSDI reviews every three years, and I still think highly of
+    her commitment and skill. She constantly goes above and beyond to assist her
+    clients. <strong
+      >I heartily suggest Barbi to anyone in need of help with Social Security
+      or SSDI</strong
+    > issues. Her expertise, compassion, and dedication to serving others are invaluable.
+  </Quote>
+
+  <Quote cite="Retired Captain USAF">
     <p>
       During my medical retirement process; I was enrolled into the Air Force
       Wounded Warrior Program for assistance. Through this enrollment I was
@@ -11,13 +31,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       Security Disability Insurance (SSDI).
     </p>
     <p>
-      In my opinion, Mrs. Law is a subject matter expert regarding the process
-      of applying for SSDI. She guided me through the time intensive process of
-      gathering the required documents to support the claim of disability, filed
-      the claim online, assisted me with forms the Social Security
-      Administration sent to clarify the claim of disability and acted on my
-      behalf as a liaison with the Social Security Administration to ensure all
-      request were answered in a timely manner.
+      In my opinion, <strong>Mrs. Law is a subject matter expert</strong> regarding
+      the process of applying for SSDI. She guided me through the time intensive process
+      of gathering the required documents to support the claim of disability, filed
+      the claim online, assisted me with forms the Social Security Administration
+      sent to clarify the claim of disability and acted on my behalf as a liaison
+      with the Social Security Administration to ensure <strong
+        >all request were answered in a timely manner</strong
+      >.
     </p>
     <p>
       Amidst many other responsibilities, Mrs. Law generously volunteers her
@@ -28,24 +49,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </p>
     <p>
       I did not want the opportunity to pass without expressing my appreciation
-      to Mrs. Law for being instrumental in my being awarded monthly disability
-      payments.
+      to Mrs. Law for being <strong
+        >instrumental in my being awarded monthly disability payments</strong
+      >.
     </p>
     <p>With deep appreciation.</p>
-    <cite>Retired Captain USAF</cite>
-  </blockquote>
+  </Quote>
 
-  <blockquote>
+  <Quote cite="SSgt USAF">
     <p>
       In December I had brain surgery and my case manager recommended that I
       apply for social security and to contact Barbi Law.
     </p>
     <p>
       My husband and I had a few meetings with her and she was nothing but
-      extremely friendly and helpful. She would contact the (SSA) administration
-      on behalf of me in order to assist with my claim for social security
-      benefits. She is very organized and made everything very easy by using
-      different stickies and such.
+      <strong>extremely friendly and helpful</strong>. She would contact the
+      (SSA) administration on behalf of me in order to assist with my claim for
+      social security benefits. She is very organized and made everything very
+      easy by using different stickies and such.
     </p>
     <p>
       It turned out that I was not able to get social security because I did not
@@ -54,25 +75,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       is a God sent and my husband and I appreciate everything that she had
       done.
     </p>
-    <cite>SSgt USAF</cite>
-  </blockquote>
+  </Quote>
 
-  <blockquote>
+  <Quote cite="Retired SMSgt USAF">
     <p>
-      My wife and I found you to be so understanding and compassionate. With a
-      thorough understanding of the Disability system! The best part was when we
-      had our phone consults we almost felt like it was face to face and you
-      made that time completely dedicated to us without rushing. I know my wife
-      appreciated your understanding of this being something we are both going
-      through and I appreciated you allowing her to be my voice at times. You
-      were amazing at taking the time to help us understand and we can not thank
-      you enough for your kindness and time!!! You are truly a blessing!!! Thank
-      you!!!
+      My wife and I found you to be so <strong
+        >understanding and compassionate</strong
+      >. With a thorough understanding of the Disability system! The best part
+      was when we had our phone consults we almost felt like it was face to face
+      and you made that time completely dedicated to us without rushing. I know
+      my wife appreciated your understanding of this being something we are both
+      going through and I appreciated you allowing her to be my voice at times.
+      You were amazing at taking the time to help us understand and we can not
+      thank you enough for your kindness and time!!! You are truly a blessing!!!
+      Thank you!!!
     </p>
-    <cite>Retired SMSgt USAF</cite>
-  </blockquote>
+  </Quote>
 
-  <blockquote>
+  <Quote cite="Medically Retired TSGT, USAF">
     <p>
       When I was going through the medical retirement process from the Air
       Force, my wife and I did as much research as we could and were told that
@@ -89,6 +109,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       concerns. We would highly recommend using IGNiTE GOD'S LITE, LLC when you
       are attempting to apply for SSDI as we could not be happier.
     </p>
-    <cite>Medically Retired TSGT, USAF</cite>
-  </blockquote>
-</BaseLayout>
+  </Quote>
+
+  <Card>
+    <p>
+      We are honored to support our community. You can view more verified
+      stories and our A+ rating directly on our
+      <a
+        href="https://www.bbb.org/us/tx/schertz/profile/disability/ignite-gods-lite-llc-0825-1000171401"
+        target="_blank"
+        rel="noopener noreferrer">BBB Business Profile</a
+      >.
+    </p>
+  </Card>
+</Page>
+
+<style is:global>
+  main {
+    row-gap: var(--space-l);
+  }
+</style>

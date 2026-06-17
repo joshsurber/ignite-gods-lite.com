@@ -1,8 +1,8 @@
 ---
-const { title, id, step = false } = Astro.props;
+const { title, step = false, ...rest } = Astro.props;
 ---
 
-<div {id}>
+<div {...rest}>
   {step && <span>Step {step}</span>}
   {title && <h3>{title}</h3>}
   <slot />
@@ -13,7 +13,7 @@ const { title, id, step = false } = Astro.props;
     max-width: 65ch;
     margin-inline: auto;
 
-    padding: 1.5rem;
+    padding: var(--space-m);
     border: 1px solid hsl(from var(--color-text) h s l / 0.1);
     border-radius: 12px;
 
@@ -35,6 +35,12 @@ const { title, id, step = false } = Astro.props;
     li {
       text-align: left;
     }
+    /* & + div { */
+    /*   margin-top: var(--space-xl); */
+    /* } */
+  }
+  div.left {
+    text-align: left;
   }
 
   span {

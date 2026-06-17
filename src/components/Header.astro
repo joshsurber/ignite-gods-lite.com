@@ -1,3 +1,7 @@
+---
+import Button from '../components/Button.astro';
+---
+
 <header>
   <a href="/" class="logo">
     <img src="/img/logo.png" alt="IGNiTE GOD’S LITE Inc" />
@@ -10,6 +14,7 @@
       <li class="testimonials">
         <a href="/testimonials">Testimonials</a>
       </li>
+      <li><Button href="/book">Book a call</Button></li>
     </ul>
   </nav>
   <blockquote class="bible">
@@ -26,6 +31,7 @@
       'logo quote'
       'logo nav';
     background: var(--color-logo);
+    box-shadow: var(--box-shadow);
   }
   a.logo {
     grid-area: logo;
@@ -38,38 +44,116 @@
     grid-area: quote;
     font-size: var(--fs--2);
     padding: 1em;
+    text-align: right;
   }
   .logo img {
     width: 20rem;
-    -webkit-mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) 75%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) 75%,
-      rgba(0, 0, 0, 0) 100%
-    );
+    /* Safari support */
+    -webkit-mask-image:
+      linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 25%,
+        rgba(0, 0, 0, 1) 75%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 5%,
+        rgba(0, 0, 0, 1) 95%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    -webkit-mask-composite: source-in;
+
+    /* Standard syntax (Chrome, Firefox, Edge) */
+    mask-image:
+      linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 25%,
+        rgba(0, 0, 0, 1) 75%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 5%,
+        rgba(0, 0, 0, 1) 95%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    mask-composite: intersect;
   }
   ul {
-    --_spacing: var(--space-xl);
+    --_spacing: var(--space-l);
     display: flex;
+    align-items: center;
+    column-gap: var(--_spacing);
+    flex-wrap: wrap;
     justify-content: end;
-    gap: var(--_spacing);
 
     margin-inline: auto var(--_spacing);
     padding: 0;
   }
   nav a {
     display: inline-block;
-    color: var(--color-glow);
+    color: var(--color-surface);
     transition: all 0.5s;
     text-decoration: none;
     &:hover {
       color: var(--color-glow);
       text-shadow: 0 0 0.125em;
       transform: translate(0, -4px);
+    }
+  }
+  @media (width<65rem) {
+    header {
+      grid-template: 'logo' 'quote' 'nav';
+    }
+    .logo img {
+      width: 100%;
+      max-width: 50rem;
+      margin-inline: auto;
+      -webkit-mask-image:
+        linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 25%,
+          rgba(0, 0, 0, 1) 75%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 25%,
+          rgba(0, 0, 0, 1) 75%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      -webkit-mask-composite: source-in;
+
+      /* Standard syntax (Chrome, Firefox, Edge) */
+      mask-image:
+        linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 25%,
+          rgba(0, 0, 0, 1) 75%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 25%,
+          rgba(0, 0, 0, 1) 85%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      mask-composite: intersect;
+    }
+    blockquote {
+      text-align: center;
+    }
+    ul {
+      justify-content: center;
     }
   }
 </style>

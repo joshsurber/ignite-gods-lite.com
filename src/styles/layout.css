@@ -1,8 +1,8 @@
-main > *,
+.layout > *,
 .full-width > * {
   grid-column: content;
 }
-main,
+.layout,
 .full-width {
   --minimum-content-padding: 2rem;
 

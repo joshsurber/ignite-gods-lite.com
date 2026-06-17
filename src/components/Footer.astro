@@ -2,8 +2,8 @@
 const thisYear = new Date().getFullYear();
 ---
 
-<footer>
-  <blockquote class="bible">
+<footer id="footer">
+  <blockquote>
     And of some have compassion, making a difference.
     <cite>Jude 1.22</cite>
   </blockquote>
@@ -17,33 +17,89 @@ const thisYear = new Date().getFullYear();
     <li>Phone: <a href="tel:2104412319">210-441-2319</a></li>
   </ul>
 
-  <p>
+  <p class="barbi">
     Barbi J Law is a Third Party, Non Attorney, Authorized Representative who
     can assist you in filing your military or civilian claim with the Social
     Security Administration
   </p>
 
-  <p>
+  <p class="bbb">
     <a
       href="https://www.bbb.org/us/tx/schertz/profile/disability/ignite-gods-lite-llc-0825-1000171401/#sealclick"
       target="_blank"
       rel="nofollow"
       ><img
-        src="https://seal-austin.bbb.org/seals/blue-seal-293-61-whitetxt-bbb-1000171401.png"
+        src="https://seal-austin.bbb.org/seals/blue-seal-293-61-blacktxt-bbb-1000171401.png"
         style="border: 0"
         alt="IGNiTE GOD'S LITE LLC BBB Business Review"
       /></a
     >
   </p>
 
-  <p>
-    Copyright 2016 – <span id="thisyear">{thisYear}</span>, Barbi J Law and
-    IGNiTE GOD'S LITE, LLC | <a href="/privacy">Privacy Policy</a>
-  </p>
-  <p>
-    Website by <a href="https://crosskeystudios.com">Cross Key Studios</a> and powered
-    by <a href="https://astro.build">Astro</a>. Flag image <a
-      href="http://www.freepik.com">Designed by pinnacleanimates / Freepik</a
-    >.
-  </p>
+  <div class="fineprint">
+    <p>
+      Copyright 2016 – <span id="thisyear">{thisYear}</span>, Barbi J Law and
+      IGNiTE GOD'S LITE, LLC | <a href="/privacy">Privacy Policy</a>
+    </p>
+    <p>
+      Website by <a href="https://crosskeystudios.com">Cross Key Studios</a> and powered
+      by <a href="https://astro.build">Astro</a>. Flag image <a
+        href="http://www.freepik.com">Designed by pinnacleanimates / Freepik</a
+      >.
+    </p>
+  </div>
 </footer>
+
+<style>
+  footer {
+    font-size: var(--fs--1);
+    display: grid;
+    grid-template:
+      'quote quote'
+      'contact barbi'
+      'bbb barbi'
+      'fine fine' / 1fr 1fr;
+    margin-block-start: var(--space-3xl);
+
+    gap: var(--space-s);
+    padding: var(--space-xl) var(--space-m);
+    background: var(--color-surface);
+    box-shadow: var(--box-shadow);
+
+    @media (width<60em) {
+      grid-template:
+        'quote'
+        'barbi'
+        'contact'
+        'bbb'
+        'fine'/1fr;
+    }
+  }
+  blockquote {
+    grid-area: quote;
+  }
+  ul {
+    grid-area: contact;
+    max-width: 65ch;
+    margin-inline: auto;
+  }
+  p.barbi {
+    grid-area: barbi;
+    max-width: 65ch;
+    margin-inline: auto;
+  }
+  p.bbb {
+    grid-area: bbb;
+    max-width: 65ch;
+    margin-inline: auto;
+  }
+  .fineprint {
+    margin-block-start: var(--space-s);
+    grid-area: fine;
+  }
+  blockquote,
+  .fineprint {
+    font-size: var(--fs--2);
+    text-align: center;
+  }
+</style>

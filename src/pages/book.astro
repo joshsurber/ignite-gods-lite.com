@@ -4,7 +4,7 @@ import Card from '../components/Card.astro';
 import Booking from '../components/Booking.astro';
 import Button from '../components/Button.astro';
 
-const title = 'Book an appointment';
+const title = 'Book a free phone consultation';
 
 // Replace this URL with the Google Calendar booking link once she provides it.
 // Default placeholder uses her existing Acuity link.
@@ -22,26 +22,23 @@ const civform =
   <p>
     Barbi J Law is excited to have an opportunity to speak to you by phone to
     share how IGNiTE GOD’S LITE, LLC can assist you in filing your Social
-    Security Disability Claim. Please complete the following two remaining
+    Security Disability Claim. Please complete the following three remaining
     steps:
   </p>
 
-  <div>
-    <Card title="Complete your short information form" step="1">
+  <div class="cards">
+    <Card title="Complete your short information form" step="1" class="prose">
       <p>
         Please fill out this form prior to your scheduled consultation so Barbi
         can review your details ahead of time.
       </p>
-
-      <Button href={milform} ext="true">
-        Military Claims Information Form
-      </Button>
-      <Button href={civform} ext="true">
-        Civilian Claims Information Form
-      </Button>
+      <div class="columns">
+        <Button href={milform} ext="true"> Military Claims </Button>
+        <Button href={civform} ext="true"> Civilian Claims </Button>
+      </div>
     </Card>
 
-    <Card title="Schedule your phone consultation" step="2">
+    <Card title="Schedule your phone consultation" step="2" class="prose">
       <p>
         Choose a time that works best for you directly below. Once booked, it
         will automatically sync to Barbi's calendar.
@@ -50,12 +47,13 @@ const civform =
       <Booking url={schedulingUrl} />
     </Card>
 
-    <Card title="Call for your phone consultation" step="3">
+    <Card title="Call for your phone consultation" step="3" class="prose">
       <p>
         Please note, after scheduling your appointment, it is your
         responsibility to initiate the contact by phone to our scheduling
-        representative, <strong>Tami at 231-519-8014</strong>, at the time you
-        have scheduled.
+        representative, <strong
+          >Tami at <a href="tel:2315198014">231-519-8014</a></strong
+        >, at the time you have scheduled.
       </p>
 
       <p>
@@ -74,10 +72,15 @@ const civform =
 </Page>
 
 <style>
-  div {
+  div.cards {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: var(--space-l);
     margin: 2rem 0;
+  }
+  .columns {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.5rem;
   }
 </style>
