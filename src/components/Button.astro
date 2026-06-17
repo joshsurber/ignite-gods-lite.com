@@ -4,7 +4,7 @@ const rel = ext ? 'noopener noreferrer' : '';
 const target = ext ? '_blank' : '';
 ---
 
-<a {href} {target} {rel}><slot /></a>
+<a {href} {target} {rel}><slot>Book a Free Consultation</slot></a>
 
 <style>
   a {
@@ -19,6 +19,7 @@ const target = ext ? '_blank' : '';
 
     color: #ffffff;
     font-weight: bold;
+    text-align: center;
     text-decoration: none;
 
     background-color: var(--color-accent);
