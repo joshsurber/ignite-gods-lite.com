@@ -14,6 +14,7 @@
   --color-brand: hsl(213 81% 16%); /* Deep Old Glory Blue (#072447) */
   --color-accent: hsl(344 75% 40%); /* Old Glory Red (#B31942) */
   --color-logo: hsl(213 81% 21%); /* Old Glory Blue (#0A3161) */
+  --color-logo: #142849;
 
   /* @link https://utopia.fyi/type/calculator?c=360,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
   --fs--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
