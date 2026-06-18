@@ -28,8 +28,8 @@ import Button from '../components/Button.astro';
   header {
     display: grid;
     grid-template:
-      'logo quote'
-      'logo nav';
+      'logo quote .'
+      'logo nav .' / auto auto var(--space-l);
     background: var(--color-logo);
     box-shadow: var(--box-shadow);
   }
@@ -92,7 +92,6 @@ import Button from '../components/Button.astro';
     flex-wrap: wrap;
     justify-content: end;
 
-    margin-inline: auto var(--_spacing);
     padding: 0;
   }
   nav a {
@@ -108,7 +107,7 @@ import Button from '../components/Button.astro';
   }
   @media (width<65rem) {
     header {
-      grid-template: 'logo' 'quote' 'nav';
+      grid-template: 'logo' 'quote' 'nav' '.' 1rem;
     }
     .logo img {
       width: 100%;
