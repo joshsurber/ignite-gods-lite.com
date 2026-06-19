@@ -3,18 +3,26 @@ const thisYear = new Date().getFullYear();
 ---
 
 <footer id="footer">
-  <blockquote>
-    And of some have compassion, making a difference.
-    <cite>Jude 1.22</cite>
-  </blockquote>
-
+  <div class="bible">
+    <!-- <blockquote> -->
+    <!--   And of some have compassion, making a difference. -->
+    <!--   <cite>Jude 1.22</cite> -->
+    <!-- </blockquote> -->
+    <blockquote>
+      And of some have compassion, making a difference.
+      <cite>Jude 1.22</cite>
+    </blockquote>
+  </div>
   <ul>
+    <li>Barbi J Law, BA President</li>
+    <li>Disability Claims Consultant & Advocate</li>
     <li>
       Email: <a href="mailto:jude1.22@ignite-gods-lite.com">
         jude1.22@ignite-gods-lite.com</a
       >
     </li>
     <li>Phone: <a href="tel:2104412319">210-441-2319</a></li>
+    <li>Web: www.ignite-gods-lite.com</li>
   </ul>
 
   <p class="barbi">
@@ -57,12 +65,12 @@ const thisYear = new Date().getFullYear();
     grid-template:
       'quote quote'
       'contact barbi'
-      'bbb barbi'
+      'contact bbb'
       'fine fine' / 1fr 1fr;
     margin-block-start: var(--space-3xl);
 
     gap: var(--space-s);
-    padding: var(--space-xl) var(--space-m);
+    padding: var(--space-xl) var(--space-m) 0;
     background: var(--color-surface);
     box-shadow: var(--box-shadow);
 
@@ -75,13 +83,14 @@ const thisYear = new Date().getFullYear();
         'fine'/1fr;
     }
   }
-  blockquote {
+  div.bible {
     grid-area: quote;
   }
   ul {
     grid-area: contact;
     max-width: 65ch;
     margin-inline: auto;
+    padding: 0;
   }
   p.barbi {
     grid-area: barbi;

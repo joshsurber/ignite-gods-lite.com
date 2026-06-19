@@ -78,3 +78,10 @@ li {
     margin-top: 0.75em;
   }
 }
+
+cite {
+  display: block;
+  &::before {
+    content: '— ';
+  }
+}

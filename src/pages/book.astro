@@ -11,9 +11,11 @@ const title = 'Book a free phone consultation';
 const schedulingUrl =
   'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0nhqIGybhpqREgcMAk4eioz0gwd94oYIWxsSfnvL6C3BtuTLvx0Fz-aS29ys__UMYWlD6uhnww?gv=true';
 const milform =
-  'https://docs.google.com/forms/d/e/1FAIpQLSfjnnKbKruvFg95AclZDFG-PJSonyHz8MVz3QMXRCyezm-kag/viewform?c=0&w=1';
+  'https://docs.google.com/forms/d/e/1FAIpQLSfjnnKbKruvFg95AclZDFG-PJSonyHz8MVz3QMXRCyezm-kag/viewform';
 const civform =
   'https://docs.google.com/forms/d/e/1FAIpQLSdvK4z-mIxaR2b5yq11I1_5x8mYyr9L974zRuRyjrpU-UQGCw/viewform';
+const kidform =
+  'https://docs.google.com/forms/d/e/1FAIpQLSdlR4jOJohHcQPn1zENLadliO5bN4bT-wcmA2kk_ko2ea2xzQ/viewform';
 ---
 
 <Page {title} bodyClass="thankyou">
@@ -33,15 +35,16 @@ const civform =
         can review your details ahead of time.
       </p>
       <div class="columns">
-        <Button href={milform} ext="true"> Military Claims </Button>
-        <Button href={civform} ext="true"> Civilian Claims </Button>
+        <Button href={milform} ext="true">Military Claims</Button>
+        <Button href={civform} ext="true">Civilian Claims</Button>
+        <Button href={kidform} ext="true">Children's Claims</Button>
       </div>
     </Card>
 
     <Card title="Schedule your phone consultation" step="2" class="prose">
       <p>
         Choose a time that works best for you directly below. Once booked, it
-        will automatically sync to Barbi's calendar.
+        will automatically sync to our calendar.
       </p>
 
       <Booking url={schedulingUrl} />
@@ -79,8 +82,24 @@ const civform =
     margin: 2rem 0;
   }
   .columns {
+    --gap: 0.5rem;
+    --min: 15ch;
+    line-height: 1.5;
+
     display: grid;
-    grid-auto-flow: column;
-    gap: 0.5rem;
+    grid-gap: var(--gap);
+    /* min() with 100% prevents overflow
+  in extra narrow spaces */
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(min(100%, var(--min)), 1fr)
+    );
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    > * {
+      flex: 1 1 var(--min);
+    }
   }
 </style>
