@@ -10,23 +10,21 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 src/pages/
-badd +1 styles/style.css
-badd +129 pages/testimonials.astro
-badd +80 pages/index.astro
-badd +6 components/Quote.astro
-badd +1 layouts/Page.astro
-badd +3 components/Card.astro
-badd +41 pages/book.astro
-badd +34 components/Header.astro
-badd +25 components/Hero.astro
-badd +22 components/Button.astro
+badd +1 pages/testimonials.astro
+badd +1 components/Quote.astro
+badd +65 components/Card.astro
+badd +3 pages/book.astro
+badd +21 components/Header.astro
+badd +17 components/Button.astro
 badd +1 styles/layout.css
-badd +72 components/Footer.astro
+badd +7 components/Footer.astro
+badd +30 styles/vars.css
+badd +20 styles/style.css
+badd +74 pages/about.astro
 argglobal
 %argdel
 $argadd src/pages/
-edit pages/testimonials.astro
+edit styles/layout.css
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -46,6 +44,27 @@ set winwidth=1
 exe 'vert 1resize ' . ((&columns * 87 + 88) / 176)
 exe 'vert 2resize ' . ((&columns * 88 + 88) / 176)
 argglobal
+balt components/Footer.astro
+setlocal foldmethod=expr
+setlocal foldexpr=nvim_treesitter#foldexpr()
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=1
+setlocal foldminlines=1
+setlocal foldnestmax=3
+setlocal foldenable
+let s:l = 13 - ((12 * winheight(0) + 21) / 42)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 13
+normal! 024|
+wincmd w
+argglobal
+if bufexists(fnamemodify("styles/style.css", ":p")) | buffer styles/style.css | else | edit styles/style.css | endif
+if &buftype ==# 'terminal'
+  silent file styles/style.css
+endif
 balt components/Header.astro
 setlocal foldmethod=expr
 setlocal foldexpr=nvim_treesitter#foldexpr()
@@ -55,33 +74,12 @@ setlocal foldlevel=1
 setlocal foldminlines=1
 setlocal foldnestmax=3
 setlocal foldenable
-let s:l = 129 - ((38 * winheight(0) + 21) / 42)
+let s:l = 83 - ((35 * winheight(0) + 21) / 42)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 129
-normal! 026|
-wincmd w
-argglobal
-if bufexists(fnamemodify("styles/layout.css", ":p")) | buffer styles/layout.css | else | edit styles/layout.css | endif
-if &buftype ==# 'terminal'
-  silent file styles/layout.css
-endif
-balt layouts/Page.astro
-setlocal foldmethod=expr
-setlocal foldexpr=nvim_treesitter#foldexpr()
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=1
-setlocal foldminlines=1
-setlocal foldnestmax=3
-setlocal foldenable
-let s:l = 7 - ((3 * winheight(0) + 21) / 42)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 7
-normal! 0
+keepjumps 83
+normal! 03|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 87 + 88) / 176)
 exe 'vert 2resize ' . ((&columns * 88 + 88) / 176)
@@ -100,7 +98,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

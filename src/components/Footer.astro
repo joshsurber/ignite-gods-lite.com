@@ -8,7 +8,7 @@ const thisYear = new Date().getFullYear();
     <!--   And of some have compassion, making a difference. -->
     <!--   <cite>Jude 1.22</cite> -->
     <!-- </blockquote> -->
-    <blockquote>
+    <blockquote class="jude122">
       And of some have compassion, making a difference.
       <cite>Jude 1.22</cite>
     </blockquote>
@@ -106,7 +106,11 @@ const thisYear = new Date().getFullYear();
     margin-block-start: var(--space-s);
     grid-area: fine;
   }
-  blockquote,
+  .jude122 {
+    color: var(--color-accent);
+    font-size: var(--fs-0);
+    text-align: center;
+  }
   .fineprint {
     font-size: var(--fs--2);
     text-align: center;

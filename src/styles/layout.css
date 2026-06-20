@@ -10,7 +10,7 @@
   --full-max-width: 1fr;
   --wide-max-width: 80ch;
   --content-max-width: 65ch;
-  --narrow-max-width: 40ch;
+  --narrow-max-width: 45ch;
 
   /** TRACK SIZES **/
   --full: minmax(var(--minimum-content-padding), 1fr);
