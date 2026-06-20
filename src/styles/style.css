@@ -52,9 +52,12 @@ img {
 
 a,
 :any-link {
+  transition:
+    color 0.2s ease,
+    transform 0.1s ease;
   color: var(--color-accent);
   &:hover {
-    color: var(--color-brand);
+    color: var(--color-glow);
   }
 }
 h1,
