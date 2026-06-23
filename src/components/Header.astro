@@ -1,10 +1,12 @@
 ---
 import Button from '../components/Button.astro';
+import { Image } from 'astro:assets';
+import logo from '../logo.png';
 ---
 
 <header>
   <a href="/" class="logo">
-    <img src="/img/logo.png" alt="IGNiTE GOD’S LITE Inc" />
+    <Image src={logo} alt="IGNiTE GOD’S LITE LLC" />
   </a>
 
   <nav>
