@@ -1,11 +1,14 @@
 ---
+import Photo from '../components/Photo.astro';
 import Page from '../layouts/Page.astro';
 import Card from '../components/Card.astro';
 import Button from '../components/Button.astro';
+import eleven from '../noalibi/Jun_22_2026_23_37_47_2.jpg';
 ---
 
 <Page bodyClass="home" hero="true">
   <div class="columns prose">
+    <Photo src={eleven} alt="eleven" title="eleven" />
     <h2>What we do</h2>
 
     <p>We can assist you in filing your disability claim by:</p>
@@ -48,10 +51,6 @@ import Button from '../components/Button.astro';
       </li>
     </ul>
   </div>
-
-  <!-- <h2>Application process for SSDI</h2> -->
-
-  <!-- For email inquiries, just fill out the form below to begin setting up an appointment. -->
 
   <div id="cta" class="narrow">
     <Card title="Application process for SSDI">

@@ -1,0 +1,47 @@
+---
+// src/components/Photo.astro
+import { Image } from 'astro:assets';
+import type { ComponentProps } from 'astro/types';
+
+// 1. Extract all original Image component props
+type ImageProps = ComponentProps<typeof Image>;
+
+// 2. Define your custom extensions
+interface Props extends ImageProps {
+  caption?: string;
+}
+
+// 3. Separate your custom props from the standard image props
+const { caption, ...imageProps } = Astro.props;
+---
+
+<figure>
+  <Image {...imageProps} class:list={[imageProps.class]} />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  figure {
+    display: inline-block;
+    border-radius: 1rem;
+    max-width: calc(50% - 2rem);
+    width: auto;
+    margin: 1rem;
+    border: 1px solid black;
+    rotate: 3deg;
+    overflow: clip;
+    float: right;
+    max-width: 25ch;
+    @media (width<60rem) {
+      display: block;
+      margin-inline: auto;
+      float: none;
+    }
+  }
+  caption {
+    font-size: 0.875rem;
+    color: #666;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+</style>

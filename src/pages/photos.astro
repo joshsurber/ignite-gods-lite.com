@@ -1,0 +1,55 @@
+---
+import Page from '../layouts/Page.astro';
+import { Image } from 'astro:assets';
+import one from '../noalibi/image000002.jpg';
+import two from '../noalibi/image000003.jpg';
+import three from '../noalibi/image000004.jpg';
+import four from '../noalibi/Jun_22_2026_23_37_47_1.jpg';
+import five from '../noalibi/Jun_22_2026_23_38_21.jpg';
+import six from '../noalibi/Jun_22_2026_23_38_15.jpg';
+import seven from '../noalibi/Jun_22_2026_23_38_30.jpg';
+import eight from '../noalibi/Jun_22_2026_23_38_07.jpg';
+import nine from '../noalibi/Jun_22_2026_23_37_52_2.jpg';
+import ten from '../noalibi/Jun_22_2026_23_38_02.jpg';
+import eleven from '../noalibi/Jun_22_2026_23_37_47_2.jpg';
+import twelve from '../noalibi/Jun_22_2026_23_37_52_1.jpg';
+const numbers = [
+  'one',
+  'two',
+  'three',
+  'four',
+  'five',
+  'six',
+  'seven',
+  'eight',
+  'nine',
+  'ten',
+  'eleven',
+  'twelve',
+];
+---
+
+<Page>
+  <div class="wide">
+    <Image src={one} alt="one" title="one" />
+    <Image src={two} alt="two" title="two" />
+    <Image src={three} alt="three" title="three" />
+    <Image src={four} alt="four" title="four" />
+    <Image src={five} alt="five" title="five" />
+    <Image src={six} alt="six" title="six" />
+    <Image src={seven} alt="seven" title="seven" />
+    <Image src={eight} alt="eight" title="eight" />
+    <Image src={nine} alt="nine" title="nine" />
+    <Image src={ten} alt="ten" title="ten" />
+    <Image src={eleven} alt="eleven" title="eleven" />
+    <Image src={twelve} alt="twelve" title="twelve" />
+  </div>
+</Page>
+
+<style>
+  div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+</style>

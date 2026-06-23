@@ -1,7 +1,9 @@
 ---
+import Photo from '../components/Photo.astro';
 import Page from '../layouts/Page.astro';
 import Card from '../components/Card.astro';
 import Quote from '../components/Quote.astro';
+import ten from '../noalibi/Jun_22_2026_23_38_02.jpg';
 ---
 
 <Page title="Testimonials" bodyClass="testimonials">
@@ -110,7 +112,7 @@ import Quote from '../components/Quote.astro';
       are attempting to apply for SSDI as we could not be happier.
     </p>
   </Quote>
-
+  <Photo src={ten} alt={ten} class="center" />
   <Card>
     <p>
       We are honored to support our community. You can view more verified
