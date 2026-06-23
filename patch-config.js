@@ -1,15 +1,28 @@
 import fs from 'fs';
 import path from 'path';
 
-const configPath = path.join(process.cwd(), 'dist', 'server', 'wrangler.json');
+const serverDir = path.join(process.cwd(), 'dist', 'server');
+const jsonPath = path.join(serverDir, 'wrangler.json');
+const tomlPath = path.join(serverDir, 'wrangler.toml');
 
-if (fs.existsSync(configPath)) {
-  let fileContent = fs.readFileSync(configPath, 'utf8');
-  // Wipe out the conflicting pages binding block entirely
-  fileContent = fileContent.replace(
+// 1. Check and patch wrangler.json if it exists
+if (fs.existsSync(jsonPath)) {
+  let content = fs.readFileSync(jsonPath, 'utf8');
+  content = content.replace(
     /"assets":\s*\{\s*"binding":\s*"ASSETS"\s*\},\s*/g,
     ''
   );
-  fs.writeFileSync(configPath, fileContent, 'utf8');
-  console.log('✅ Reserved ASSETS string safely patched!');
+  fs.writeFileSync(jsonPath, content, 'utf8');
+  console.log('✅ Generated wrangler.json safely patched!');
+}
+
+// 2. Check and patch wrangler.toml if it exists
+if (fs.existsSync(tomlPath)) {
+  let content = fs.readFileSync(tomlPath, 'utf8');
+  content = content.replace(
+    /assets\s*=\s*\{\s*binding\s*=\s*"ASSETS"\s*\}/g,
+    ''
+  );
+  fs.writeFileSync(tomlPath, content, 'utf8');
+  console.log('✅ Generated wrangler.toml safely patched!');
 }

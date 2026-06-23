@@ -2,11 +2,6 @@
   "name": "ignite-gods-lite",
   "compatibility_date": "2026-06-23",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "dist/server/entry.mjs",
-  "assets": {
-    "directory": "dist/client",
-    "binding": "LOCAL_ASSETS"
-  },
   "kv_namespaces": [
     {
       "binding": "SESSION",
