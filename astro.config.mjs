@@ -1,8 +1,13 @@
 import { defineConfig } from 'astro/config';
-import cloudflare from '@astrojs/cloudflare'; // 1. Import the adapter
+import cloudflare from '@astrojs/cloudflare';
 
-// https://astro.build/config
+// https://astro.build
 export default defineConfig({
-  output: 'server', // 2. Tell Astro to render on demand
-  adapter: cloudflare(), // 3. Hook up the adapter
+  output: 'server',
+  adapter: cloudflare({
+    // Change the asset binding name to prevent the Cloudflare conflict
+    assets: {
+      binding: 'LOCAL_ASSETS',
+    },
+  }),
 });
