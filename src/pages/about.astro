@@ -143,12 +143,16 @@ import twelve from '../noalibi/Jun_22_2026_23_37_52_1.jpg';
 </Page>
 
 <style is:global>
-  img {
+  .prose img {
     border-radius: 1rem;
     max-height: 50vh;
     width: auto;
     float: right;
     margin: 1rem;
     border: 1px solid black;
+    rotate: 3deg;
+    &:nth-child(even of img) {
+      rotate: -3deg;
+    }
   }
 </style>
