@@ -1,114 +1,154 @@
 ---
 import Page from '../layouts/Page.astro';
+import { Image } from 'astro:assets';
+import one from '../noalibi/image000002.jpg';
+import two from '../noalibi/image000003.jpg';
+import three from '../noalibi/image000004.jpg';
+import four from '../noalibi/Jun_22_2026_23_37_47_1.jpg';
+// import five from '../noalibi/Jun_22_2026_23_38_21.jpg';
+import six from '../noalibi/Jun_22_2026_23_38_15.jpg';
+import seven from '../noalibi/Jun_22_2026_23_38_30.jpg';
+import eight from '../noalibi/Jun_22_2026_23_38_07.jpg';
+import nine from '../noalibi/Jun_22_2026_23_37_52_2.jpg';
+import ten from '../noalibi/Jun_22_2026_23_38_02.jpg';
+import eleven from '../noalibi/Jun_22_2026_23_37_47_2.jpg';
+import twelve from '../noalibi/Jun_22_2026_23_37_52_1.jpg';
 ---
 
 <Page title="Our story" bodyClass="about">
-  <img
+  <div class="prose">
+    {
+      /*
+    <img
     src="/img/barbi-office.jpg"
     alt="Image of Barbi J Law"
     class="photo float-left"
-  />
+    */
+    }
+    <Image src={one} alt="one" />
 
-  <p>
-    In 2015, I struggled with an illness that severely interfered with my
-    ability to work competitively. This illness ultimately lead to the need for
-    my resignation in August 2015. After months of recuperation I was asked to
-    assist a dear friend and mentor by representing her at a Social Security
-    Disability Hearing. Her hearing was awarded favorably and my desire to
-    launch IGNiTE GOD’S LITE in January 2016 became a reality.
-  </p>
+    <p>
+      In 2015, I struggled with an illness that severely interfered with my
+      ability to work competitively. This illness ultimately lead to the need
+      for my resignation in August 2015. After months of recuperation I was
+      asked to assist a dear friend and mentor by representing her at a Social
+      Security Disability Hearing. Her hearing was awarded favorably and my
+      desire to launch IGNiTE GOD’S LITE in January 2016 became a reality.
+    </p>
 
-  <p>
-    A chance meeting with members of the Wounded Warrior program at Randolph AFB
-    further catapulted this business adventure. The opportunity to assist
-    Wounded Warriors in filing SSDI applications was beyond my wildest dreams
-    but soon became my reality. Now, three years later I wouldn’t have it any
-    other way. I absolutely LOVE this business opportunity, it is completely
-    fulfilling and tremendously rewarding.
-  </p>
+    <p>
+      A chance meeting with members of the Wounded Warrior program at Randolph
+      AFB further catapulted this business adventure. The opportunity to assist
+      Wounded Warriors in filing SSDI applications was beyond my wildest dreams
+      but soon became my reality. Now, three years later I wouldn’t have it any
+      other way. I absolutely LOVE this business opportunity, it is completely
+      fulfilling and tremendously rewarding.
+    </p>
 
-  <p>
-    The Wounded Warriors, their spouses and the Recovery Care Coordinators have
-    all become my extended family. The United States Wounded Warriors are a
-    living testament to strength, honor, faithfulness, sacrifice and courage.
-    They display long suffering devotion to uphold the freedoms and liberties we
-    Americans often take for granted. The spouses and children of these Heroes,
-    are equally worthy of praise for their selfless sacrifices on the American
-    Home-front while separated from their loves for extended periods of time. In
-    my opinion, whether it be the WW Hero, their spouse or children, their
-    sacrifices are rivaled only by Jesus Christ’s living sacrifice on the Cross
-    of Calvary over 2000 years ago.
-  </p>
-  <p>
-    In June of 2022 Independent Contractor Tami Piatt agreed to partner with IGL
-    as a Virtual Assistant. In this role she provides administrative support by
-    organizing, reviewing and responding to emails on behalf of Barbi J Law. In
-    October of 2024 Tami welcomed the opportunity to begin screening potential
-    clients. She continues working this contract as IGL scheduling
-    representative to date. Tami is a mom to Veteran sons. She has enjoyed
-    partnering with IGL, viewing this contract as an opportunity to be a
-    blessing to others in need. Tami is an asset to IGL, she is a professional
-    and reliable contractor. The clients praise her kindness, knowledge and
-    empathetic ear.
-  </p>
+    <p>
+      <Image src={seven} alt="seven" />
+      The Wounded Warriors, their spouses and the Recovery Care Coordinators have
+      all become my extended family. The United States Wounded Warriors are a living
+      testament to strength, honor, faithfulness, sacrifice and courage. They display
+      long suffering devotion to uphold the freedoms and liberties we Americans often
+      take for granted. The spouses and children of these Heroes, are equally worthy
+      of praise for their selfless sacrifices on the American Home-front while separated
+      from their loves for extended periods of time. In my opinion, whether it be
+      the WW Hero, their spouse or children, their sacrifices are rivaled only by
+      Jesus Christ’s living sacrifice on the Cross of Calvary over 2000 years ago.
+    </p>
+    <p>
+      In June of 2022 Independent Contractor Tami Piatt agreed to partner with
+      IGL as a Virtual Assistant. In this role she provides administrative
+      support by organizing, reviewing and responding to emails on behalf of
+      Barbi J Law. In October of 2024 Tami welcomed the opportunity to begin
+      screening potential clients. She continues working this contract as IGL
+      scheduling representative to date. Tami is a mom to Veteran sons. She has
+      enjoyed partnering with IGL, viewing this contract as an opportunity to be
+      a blessing to others in need. Tami is an asset to IGL, she is a
+      professional and reliable contractor. The clients praise her kindness,
+      knowledge and empathetic ear.
+    </p>
 
-  <h2>Barbi J. Law, B.A.</h2>
+    <h2>Barbi J. Law, B.A.</h2>
 
+    {
+      /*
   <img
     src="/img/plane.jpg"
     alt="Image of Barbi standing in front of a plane"
     class="photo float-right"
   />
+  */
+    }
+    <Image src={four} alt="four" />
 
-  <p>President and CEO of IGNiTE GOD'S LITE, LLC (est. August 2018)</p>
+    <p>President and CEO of IGNiTE GOD'S LITE, LLC (est. August 2018)</p>
 
-  <ul>
-    <li>
-      DEGREE
-      <ul>
-        <li>Bachelors of Arts in Behavioral Sciences</li>
-        <li>Associates in Business Admin</li>
-        <li>Mount Marty College, Yanton, SD</li>
-        <li>August 1988 – May 1992</li>
-      </ul>
-    </li>
-    <li>
-      EXPERIENCE
-      <ul>
-        <li>
-          Over a decade of experience preparing and filing Social Security
-          Disability Claims; initiating initial claim following disability
-          process through first appeal.
-        </li>
-        <li>
-          5 years experience appealing claims at the Administrative Law Judge
-          level of appeal.
-        </li>
-      </ul>
-    </li>
-    <li>
-      AWARDS
-      <ul>
-        <li>
-          Multiple recipient of quarterly recognition awards, from January 2013
-          – July 2015 for "Outstanding Customer Service".
-        </li>
-        <li>
-          Team Lead providing monthly supervision, mentorship and routine
-          upgrade training for six team members from September 2014 – July 2015.
-        </li>
-        <li>
-          2016 award recipient for the Air Force Personnel Center Wounded
-          Warrior Program "Care<strong>Beyond</strong>Duty".
-        </li>
-      </ul>
-      <p>
-        <img
-          class="photo mx-auto"
-          src="/img/statue.jpg"
-          alt="Barbi in front of some statue of planes because MURICA!"
-        />
-      </p>
-    </li>
-  </ul>
+    <ul>
+      <li>
+        DEGREE
+        <ul>
+          <li>Bachelors of Arts in Behavioral Sciences</li>
+          <li>Associates in Business Admin</li>
+          <li>Mount Marty College, Yanton, SD</li>
+          <li>August 1988 – May 1992</li>
+        </ul>
+      </li>
+      <li>
+        EXPERIENCE
+        <ul>
+          <li>
+            Over a decade of experience preparing and filing Social Security
+            Disability Claims; initiating initial claim following disability
+            process through first appeal.
+          </li>
+          <li>
+            5 years experience appealing claims at the Administrative Law Judge
+            level of appeal.
+          </li>
+        </ul>
+      </li>
+      <li>
+        AWARDS
+        <Image src={six} alt="six" />
+        <ul>
+          <li>
+            Multiple recipient of quarterly recognition awards, from January
+            2013 – July 2015 for "Outstanding Customer Service".
+          </li>
+          <li>
+            Team Lead providing monthly supervision, mentorship and routine
+            upgrade training for six team members from September 2014 – July
+            2015.
+          </li>
+          <li>
+            2016 award recipient for the Air Force Personnel Center Wounded
+            Warrior Program "Care<strong>Beyond</strong>Duty".
+          </li>
+        </ul>
+
+        <!-- <img class="photo mx-auto" src="/img/statue.jpg" alt="Barbi in front of some statue of planes because MURICA!" -->
+
+        <!-- <Image src={four} alt="four" /> -->
+        <!-- <Image src={six} alt="six" /> -->
+        <!-- <Image src={eight} alt="eight" /> -->
+        <!-- <Image src={nine} alt="nine" /> -->
+        <!-- <Image src={ten} alt="ten" /> -->
+        <!-- <Image src={eleven} alt="eleven" /> -->
+        <!-- <Image src={twelve} alt="twelve" /> -->
+      </li>
+    </ul>
+  </div>
 </Page>
+
+<style is:global>
+  img {
+    border-radius: 1rem;
+    max-height: 50vh;
+    width: auto;
+    float: right;
+    margin: 1rem;
+    border: 1px solid black;
+  }
+</style>
