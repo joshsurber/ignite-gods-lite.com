@@ -1,0 +1,10 @@
+name = "ignite-gods-lite"
+compatibility_date = "2026-06-23"
+
+# Tell the unified worker framework where Astro's built files are
+pages_build_output_dir = "dist"
+
+# Link your existing session KV namespace safely
+[[kv_namespaces]]
+binding = "SESSION"
+id = "9b98cd36549540168b6d8b398d13702f"
